@@ -3,8 +3,8 @@ import { useState } from "react";
 import SKILLS from "../data/skills";
 import { Col, Container, Row } from 'react-bootstrap';
 import { Skills } from "../components/skill/Skill";
+import  Banner  from "../components/banner/banner";
 
-import Banner from "../components/banner/banner";
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 
