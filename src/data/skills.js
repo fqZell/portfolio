@@ -1,52 +1,52 @@
-import meter1 from '../assets/img/skills/meter1.svg';
-import meter2 from '../assets/img/skills/meter2.svg';
-import meter3 from '../assets/img/skills/meter3.svg';
+import html from '../assets/img/skills/html.svg'
+import css from '../assets/img/skills/css.svg'
+import js from '../assets/img/skills/js.svg'
+import php from '../assets/img/skills/php.svg'
+import react from '../assets/img/skills/react.svg'
+import vite from '../assets/img/skills/vite.svg'
+import bootstrap from '../assets/img/skills/bootstrap.svg'
+import next from '../assets/img/skills/next.svg'
 
 const SKILLS = [
     {
         id: 1,
-        title: "design",
-        preview: meter1,
+        title: "html",
+        preview: html,
     },
     {
         id: 2,
-        title: "html",
-        preview: meter3,
+        title: "css",
+        preview: css,
     },
     {
         id: 3,
-        title: "css",
-        preview: meter1,
+        title: "js",
+        preview: js,
     },
     {
         id: 4,
-        title: "js",
-        preview: meter2,
+        title: "php",
+        preview: php,
     },
     {
         id: 5,
-        title: "php",
-        preview: meter1,
+        title: "react",
+        preview: react,
     },
     {
         id: 6,
-        title: "react",
-        preview: meter3,
+        title: "next.js",
+        preview: next,
     },
     {
         id: 7,
-        title: "next.js",
-        preview: meter3,
+        title: "bootstrap",
+        preview: bootstrap,
     },
     {
         id: 8,
-        title: "bootstrap",
-        preview: meter3,
-    },
-    {
-        id: 9,
         title: "vite",
-        preview: meter2,
+        preview: vite,
     },
 ]
 

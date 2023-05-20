@@ -14,6 +14,7 @@ const PROJECTS = [
         title: "Магазин одежды",
         skills: "React, scss, vite, node js",
         preview: pre1,
+        githubLink: "https://github.com/fqZell/safq-app/tree/master",
     },
     {
         id: 2,

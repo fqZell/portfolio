@@ -56,9 +56,9 @@ const Header = () => {
                 </Nav>
                 <span className="navbar-text">
                 <div className="social-icon">
-                    <a href="#"><FontAwesomeIcon className="icon" icon={faTelegram} /></a>
-                    <a href="#"><FontAwesomeIcon className="icon" icon={faVk} /></a>
-                    <a href="#"><FontAwesomeIcon className="icon" icon={faInstagram} /></a>
+                    <a href="#"><FontAwesomeIcon className="icon" icon={faTelegram} size='xl' /></a>
+                    <a href="#"><FontAwesomeIcon className="icon" icon={faVk} size='xl' /></a>
+                    <a href="#"><FontAwesomeIcon className="icon" icon={faInstagram} size='xl' /></a>
                 </div>
                 {/* <HashLink to='#connect'> */}
                     <button className="vvd"><span>Давайте свяжемся</span></button>
