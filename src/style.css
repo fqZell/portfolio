@@ -517,6 +517,10 @@ nav.navbar .navbar-toggler-icon span:nth-child(3) {
     letter-spacing: 0.8px;
     line-height: 1.1em;
     color: #fff;
+    transition: 0.5s ease-in-out;
+}
+.proj-txtx h4:hover {
+    color:#B8B8B8;
 }
 .proj-txtx span {
     font-style: italic;
@@ -604,4 +608,24 @@ nav.navbar .navbar-toggler-icon span:nth-child(3) {
     width: 100%;
     height: 100%;
     position: absolute;
+}
+
+/* single Project */
+.singleProject {
+    margin: 250px 0 0 0;
+}
+.project-details h2{
+    text-align: center;
+    padding-bottom: 24px;
+}
+.gallery {
+
+}
+.gallery img{
+    max-width: 800px;
+    object-fit: contain;
+    border-radius: 16px;
+    /* -webkit-box-shadow: 0px 5px 10px 2px rgba(129, 129, 129, 0.2);
+    -moz-box-shadow: 0px 5px 10px 2px rgba(119, 117, 117, 0.2);
+    box-shadow: 0px 5px 10px 2px rgba(100, 100, 100, 0.2); */
 }

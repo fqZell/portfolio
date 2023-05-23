@@ -3,6 +3,9 @@ import { Container } from 'react-bootstrap';
 import { useParams } from 'react-router-dom';
 import PROJECTS from '../data/projects';
 
+import Carousel from 'react-multi-carousel';
+import 'react-multi-carousel/lib/styles.css';
+
 const ProjectPage = () => {
     const { id } = useParams();
     const [project, setProject] = useState(null);
@@ -19,13 +22,25 @@ const ProjectPage = () => {
       return <p>Проект не найден</p>;
     }
   
-    // const handleClickPrev = () => {
-    //   setCurrentImageIndex((prevIndex) => prevIndex - 1);
-    // };
-  
-    // const handleClickNext = () => {
-    //   setCurrentImageIndex((prevIndex) => prevIndex + 1);
-    // };
+    const responsive = {
+        superLargeDesktop: {
+          // the naming can be any, depends on you.
+          breakpoint: { max: 4000, min: 3000 },
+          items: 1
+        },
+        desktop: {
+          breakpoint: { max: 3000, min: 1024 },
+          items: 1
+        },
+        tablet: {
+          breakpoint: { max: 1024, min: 464 },
+          items: 1
+        },
+        mobile: {
+          breakpoint: { max: 464, min: 0 },
+          items: 1
+        }
+    };
 
   return (
     <>
@@ -34,11 +49,10 @@ const ProjectPage = () => {
         <div className="project-details">
           <h2>{project.title}</h2>
           <div className="gallery">
-            <img src={project.preview} alt={project.title} />
-            <div className="controls">
-                {/* <button onClick={handleClickPrev}>Предыдущая</button>
-                <button onClick={handleClickNext}>Следующая</button> */}
-            </div>
+            <Carousel responsive={responsive} infinite className='img-slider'>
+                {/* <img src={project.photo} alt={project.title} /> */}
+                <img src={project.photo2} alt={project.title} />
+            </Carousel>
           </div>
         </div>
       </Container>
