@@ -82,6 +82,8 @@ p.danger {
     color: red;
 }
 
+/************ Header Css ************/
+
 nav.navbar img {
     width: 45px;
     height: 45px;
@@ -310,6 +312,14 @@ nav.navbar .navbar-toggler-icon span:nth-child(3) {
     line-height: 1.5em;
     width: 96%;
 }
+@media (max-width: 400px) {
+    .banner h1 {
+        font-size: 35px;
+    }
+    .banner p {
+        font-size: 16px;
+    }
+}
 .banner button {
     color: #fff;
     font-weight: 700;
@@ -497,11 +507,6 @@ nav.navbar .navbar-toggler-icon span:nth-child(3) {
     opacity: 0;
     width: 100%;
 }
-@media (max-width: 1300px) {
-    .proj-txtx h4 span{
-        font-size: 15px;
-    }
-}
 .proj-imgbx:hover .proj-txtx {
     top: 50%;
     opacity: 1;
@@ -511,12 +516,22 @@ nav.navbar .navbar-toggler-icon span:nth-child(3) {
     font-weight: 700;
     letter-spacing: 0.8px;
     line-height: 1.1em;
+    color: #fff;
 }
 .proj-txtx span {
     font-style: italic;
     font-weight: 400;
     font-size: 15px;
     letter-spacing: 0.8px;
+    color: #fff;
+}
+@media (max-width: 1300px) {
+    .proj-txtx h4{
+        font-size: 16px;
+    }
+    .proj-txtx button span{
+        font-size: 14px;
+    }
 }
 .background-image-right {
     top: 20%;
@@ -553,19 +568,23 @@ nav.navbar .navbar-toggler-icon span:nth-child(3) {
     font-weight: 700;
     color: #fff;
     border: 1px solid #fff;
-    padding: 9px 17px;
+    padding: 4px 8px;
     font-size: 14px;
-    margin-left: 18px;
     position: relative;
     background-color: transparent;
     transition: 0.3s ease-in-out;
 }
-
+@media (max-width: 1300px) {
+    .proj-imgbx button {
+        width: 80%;
+        padding: 2px 4px;
+        font-size: 1;
+    }
+}
 .proj-imgbx button span {
     z-index: 1;
     color: #121212;
 }
-
 .proj-imgbx button::before {
     content: "";
     width: 0%;
@@ -577,11 +596,9 @@ nav.navbar .navbar-toggler-icon span:nth-child(3) {
     z-index: -1;
     transition: 0.3s ease-in-out;
 }
-
 .proj-imgbx button:hover {
     color: #121212;
 }
-
 .proj-imgbx button:hover::before {
     content: "";
     width: 100%;

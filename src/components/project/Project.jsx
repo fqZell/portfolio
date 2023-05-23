@@ -9,11 +9,15 @@ const Project = ({ project }) => {
       <div className="proj-imgbx">
         <img src={project.preview} alt={project.title} />
         <div className="proj-txtx">
-          <h4>{project.title}</h4>
-          <span>{project.skills}</span>
-          <button><NavLink to={project.githubLink} target="_blank" rel="noopener noreferrer">
+          <NavLink to={`/project/${project.id}`}>
+            <h4>{project.title}</h4>
+          </NavLink>
+          {/* <span>{project.skills}</span>
+          <NavLink to={project.githubLink} target="_blank" rel="noopener noreferrer">
+            <button>
               <span>Перейти к репозиторию на GitHub</span>
-          </NavLink></button>
+            </button>
+          </NavLink> */}
         </div>
       </div>
     </Col>
