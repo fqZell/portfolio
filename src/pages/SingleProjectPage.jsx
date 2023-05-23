@@ -6,7 +6,7 @@ import PROJECTS from '../data/projects';
 const SingleProjectPage = () => {
   const { id } = useParams();
   const [project, setProject] = useState(null);
-  const [currentImageIndex, setCurrentImageIndex] = useState(0); 
+  // const [currentImageIndex, setCurrentImageIndex] = useState(0); 
 
   useEffect(() => {
     // Найти проект с нужным id из массива PROJECTS
@@ -19,13 +19,13 @@ const SingleProjectPage = () => {
     return <p>Проект не найден</p>;
   }
 
-  const handleClickPrev = () => {
-    setCurrentImageIndex((prevIndex) => prevIndex - 1);
-  };
+  // const handleClickPrev = () => {
+  //   setCurrentImageIndex((prevIndex) => prevIndex - 1);
+  // };
 
-  const handleClickNext = () => {
-    setCurrentImageIndex((prevIndex) => prevIndex + 1);
-  };
+  // const handleClickNext = () => {
+  //   setCurrentImageIndex((prevIndex) => prevIndex + 1);
+  // };
 
   return (
     <>
@@ -36,8 +36,8 @@ const SingleProjectPage = () => {
           <div className="gallery">
             <img src={project.preview} alt={project.title} />
             <div className="controls">
-                <button onClick={handleClickPrev}>Предыдущая</button>
-                <button onClick={handleClickNext}>Следующая</button>
+                {/* <button onClick={handleClickPrev}>Предыдущая</button>
+                <button onClick={handleClickNext}>Следующая</button> */}
             </div>
           </div>
         </div>
