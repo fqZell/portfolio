@@ -803,3 +803,6 @@ nav.navbar .navbar-toggler-icon span:nth-child(3) {
     letter-spacing: 0.5px;
     margin-top: 20px;
 }
+.error-messages {
+    color: tomato;
+}
