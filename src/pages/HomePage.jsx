@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import SKILLS from "../data/skills";
 import { Col, Container, Row } from 'react-bootstrap';
@@ -7,6 +7,7 @@ import  Banner  from "../components/banner/Banner";
 
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
+import { ContactForm } from "../components/contactForm/ContactForm";
 
 const HomePage = () => {
 
@@ -54,6 +55,8 @@ const HomePage = () => {
                 </Row>
                 </Container>
             </section>
+
+            <ContactForm />
 
         </>
     )

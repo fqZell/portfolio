@@ -6,6 +6,12 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 const Root = () => {
 
+    // useEffect(() => {
+    //     fetch("/api")
+    //     .then((res) => res.json())
+    //     .then((data) => { console.log(data)})
+    // }, [])
+
     return (
         <>
             <div className="layout">
