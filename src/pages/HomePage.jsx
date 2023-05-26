@@ -8,7 +8,6 @@ import  Banner  from "../components/banner/Banner";
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 import { ContactForm } from "../components/contactForm/ContactForm";
-import NewsletterSubscribe from "../components/newsletter/NewsletterSubscribe";
 
 const HomePage = () => {
 
@@ -58,8 +57,6 @@ const HomePage = () => {
             </section>
 
             <ContactForm />
-
-            <NewsletterSubscribe />
 
         </>
     )

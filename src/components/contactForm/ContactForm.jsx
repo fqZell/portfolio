@@ -1,5 +1,5 @@
-import { useRef, useState, useEffect } from "react";
-import { Container, Row, Col } from "react-bootstrap";
+import React, { useRef, useState, useEffect } from "react";
+import { Container, Row, Col, Modal, Button } from "react-bootstrap";
 import contactImg from "../../assets/img/contact/contact-img.svg";
 import emailjs from '@emailjs/browser';
 
@@ -15,9 +15,10 @@ export const ContactForm = () => {
   };
 
   const [formDetails, setFormDetails] = useState(formInitialDetails);
-  const [buttonText, setButtonText] = useState("Send");
+  const [buttonText, setButtonText] = useState("Отправить");
   const [formErrors, setFormErrors] = useState([]);
   const [message, setMessage] = useState("");
+  const [showModal, setShowModal] = useState(false);
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -49,10 +50,6 @@ export const ContactForm = () => {
       errors.push("Введите действительный адрес электронной почты.");
     }
 
-    // if (!formDetails.phone.match(/^\+7 \d{3}-\d{3}-\d{2}-\d{2}$/)) {
-    //   errors.push("Введите номер телефона в формате +7 9XX-XXX-XX-XX.");
-    // }
-
     if (formDetails.message.length < 5 || formDetails.message.length > 100) {
       errors.push("Сообщение должно содержать от 5 до 100 символов.");
     }
@@ -62,28 +59,32 @@ export const ContactForm = () => {
 
   const sendEmail = (e) => {
     e.preventDefault();
-
+  
     const errors = validateForm();
-
+  
     if (errors.length > 0) {
       setFormErrors(errors);
+      setShowModal(true);
       return;
     }
-
+  
     setFormErrors([]);
-    setButtonText("Sending...");
-
+    setButtonText("Отправление...");
+  
     emailjs
       .sendForm("service_g6vo5zj", "template_btl4jgt", form.current, "O5WdxjyUfcxNbrwbt")
       .then(
         (result) => {
-          setButtonText("Send");
-          setMessage("Your message has been sent!");
-          e.target.reset();
+          setButtonText("Отправить");
+          setMessage("Ваше сообщение отправлено!");
+          setShowModal(true);
+          form.current.reset(); // Сбросить форму
+          setFormDetails(formInitialDetails); // Обновить состояние формы
         },
         (error) => {
-          setButtonText("Send");
-          setMessage("An error occurred while sending the message. Please try again.");
+          setButtonText("Отправить");
+          setMessage("При отправке сообщения произошла ошибка. Пожалуйста, попробуйте еще раз.");
+          setShowModal(true);
         }
       );
   };
@@ -151,13 +152,35 @@ export const ContactForm = () => {
                 </Row>
               </form>
               {formErrors.length > 0 && (
-                <div className="error-messages">
-                  {formErrors.map((error, index) => (
-                    <p key={index}>{error}</p>
-                  ))}
-                </div>
+                <Modal show={showModal} onHide={() => setShowModal(false)} centered>
+                  <Modal.Header closeButton>
+                    <Modal.Title className="modal_title">Ошибка</Modal.Title>
+                  </Modal.Header>
+                  <Modal.Body className="modal_body">
+                    {formErrors.map((error, index) => (
+                      <p key={index}>{error}</p>
+                    ))}
+                  </Modal.Body>
+                  <Modal.Footer>
+                    <Button variant="secondary" onClick={() => setShowModal(false)}>
+                      Закрыть
+                    </Button>
+                  </Modal.Footer>
+                </Modal>
               )}
-              {message && <div className="success-message">{message}</div>}
+              {message && (
+                <Modal show={showModal} onHide={() => setShowModal(false)} centered>
+                  <Modal.Header closeButton>
+                    <Modal.Title className="modal_title">Успешно</Modal.Title>
+                  </Modal.Header>
+                  <Modal.Body className="modal_body">{message}</Modal.Body>
+                  <Modal.Footer>
+                    <Button variant="secondary" onClick={() => setShowModal(false)}>
+                      Закрыть
+                    </Button>
+                  </Modal.Footer>
+                </Modal>
+              )}
             </div>
           </Col>
         </Row>

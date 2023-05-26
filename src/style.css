@@ -403,7 +403,7 @@ nav.navbar .navbar-toggler-icon span:nth-child(3) {
 
 /************ Projects Css ************/
 .project {
-    padding: 160px 0;
+    padding: 160px 0 100px 0;
     position: relative;
     background-color: black;
 }
@@ -656,7 +656,7 @@ nav.navbar .navbar-toggler-icon span:nth-child(3) {
 /************ Contact Css ************/
 .contact {
     background: linear-gradient(90.21deg, #AA367C -5.91%, #4A2FBD 111.58%);
-    padding: 60px 0 200px 0;
+    padding: 60px 0 100px 0;
 }
 .contact img {
     width: 92%;
@@ -727,25 +727,27 @@ nav.navbar .navbar-toggler-icon span:nth-child(3) {
 
 /************ Footer Css ************/
 .footer {
-    padding: 0 0 50px 0;
-    background-image: url('./assets/img/footer-bg.png');
-    background-position: center center;
-    background-size: cover;
-    background-repeat: no-repeat;
+    padding: 60px 0;
+    background-color: #121212;
+    color: #fff;
+    text-align: center;
 }
+
 .newsletter-bx {
     background: #FFFFFF;
     border-radius: 55px;
     color: #121212;
-    padding: 85px 125px;
-    margin-bottom: 80px;
-    margin-top: -122px;
+    padding: 50px 80px;
+    margin-bottom: 50px;
 }
+
 .newsletter-bx h3 {
     font-weight: 700;
     letter-spacing: 0.5px;
     line-height: 1.2em;
+    margin-bottom: 20px;
 }
+
 .new-email-bx {
     background: #fff;
     padding: 5px;
@@ -754,7 +756,10 @@ nav.navbar .navbar-toggler-icon span:nth-child(3) {
     z-index: 0;
     display: flex;
     align-items: center;
+    max-width: 400px;
+    margin: 0 auto;
 }
+
 .new-email-bx::before {
     content: "";
     background: linear-gradient(90.21deg, #AA367C -5.91%, #4A2FBD 111.58%);
@@ -766,6 +771,7 @@ nav.navbar .navbar-toggler-icon span:nth-child(3) {
     bottom: -1px;
     right: -1px;
 }
+
 .new-email-bx::after {
     content: "";
     background: #fff;
@@ -777,6 +783,7 @@ nav.navbar .navbar-toggler-icon span:nth-child(3) {
     bottom: 0;
     right: 0;
 }
+
 .new-email-bx input {
     width: 100%;
     color: #121212;
@@ -785,17 +792,37 @@ nav.navbar .navbar-toggler-icon span:nth-child(3) {
     border: 0;
     padding: 0 15px;
 }
+
 .new-email-bx button {
     background: linear-gradient(90.21deg, #AA367C -5.91%, #4A2FBD 111.58%);
-    padding: 20px 65px;
+    padding: 14px 48px;
     color: #fff;
     font-weight: 500;
     letter-spacing: 0.5px;
     border-radius: 18px;
+    margin-left: 10px;
+    border: 0;
+    cursor: pointer;
 }
+
+@media (max-width: 1300px) {
+    .new-email-bx {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .new-email-bx button {
+        margin-top: 10px;
+        margin-left: 0;
+        width: 100%;
+    }
+}
+
 .footer img {
-    width: 26%;
+    width: 40px;
+    margin-bottom: 20px;
 }
+
 .footer p {
     font-weight: 400;
     font-size: 14px;
@@ -803,6 +830,15 @@ nav.navbar .navbar-toggler-icon span:nth-child(3) {
     letter-spacing: 0.5px;
     margin-top: 20px;
 }
+
+
+/* Ошибка и модельные окна */
 .error-messages {
+    color: tomato;
+}
+.modal_title {
+    color: tomato;
+}
+.modal_body {
     color: tomato;
 }
