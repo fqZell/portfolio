@@ -56,7 +56,7 @@ const Banner = () => {
               {/* {({ isVisible }) => 
               <div className={isVisible ? "animate__animated animate__fadeIn" : ""}> */}
                 <span className="tagline">Добро пожаловать в мое портфолио</span>
-                <h1>{`Привет, меня зовут Айрат, я `} 
+                <h1>{`Я `} 
                 <span className='txt-rotate' data-period="1000" 
                 data-rotate='[ "Веб Разработчик", "Веб Дизайнер", "UI/UX Дизайнер" ]'>
                 <span className="wrap">{text}</span>

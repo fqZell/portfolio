@@ -1,16 +1,11 @@
-import React, { useEffect } from "react";
+import React from "react";
 import Header from "../components/header/Header";
 import { Outlet } from "react-router-dom";
 import Footer from "../components/footer/Footer";
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { ContactForm } from "../components/contactForm/ContactForm";
 
 const Root = () => {
-
-    // useEffect(() => {
-    //     fetch("/api")
-    //     .then((res) => res.json())
-    //     .then((data) => { console.log(data)})
-    // }, [])
 
     return (
         <>
@@ -21,6 +16,7 @@ const Root = () => {
 
                 <main>
                     <Outlet />
+                    <ContactForm />
                 </main>
 
                 <footer>
