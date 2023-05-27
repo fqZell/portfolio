@@ -83,7 +83,7 @@ p.success {
     color: green;
 }
 
-/************ Header Css ************/
+/************ Header CSS ************/
 :root {
     --navbar-primary-color: #fff;
     --navbar-secondary-color: #121212;
@@ -217,10 +217,7 @@ span.navbar-text {
 }
 
 .navbar-text button:hover::before {
-    content: "";
     width: 100%;
-    height: 100%;
-    position: absolute;
 }
 
 nav.navbar .navbar-toggler:active,
@@ -302,7 +299,37 @@ nav.navbar .navbar-toggler-icon.open span:nth-child(3) {
     transform: translateY(0) rotate(-45deg);
 }
 
+@media (max-width: 576px) {
+    .container {
+        width: 93%;
+    }
+    nav.navbar {
+        padding: 10px 0;
+    }
+
+    nav.navbar a.navbar-brand {
+        width: 25%;
+    }
+
+    nav.navbar .navbar-nav .navbar-link {
+        padding: 0 15px;
+        font-size: 16px;
+    }
+
+    .navbar-text button {
+        padding: 12px 24px;
+        font-size: 16px;
+    }
+}
+
 /************ Banner Css ************/
+:root {
+    --banner-bg-color: linear-gradient(90.21deg, rgba(170, 54, 124, 0.5) -5.91%, rgba(74, 47, 189, 0.5) 111.58%);
+    --banner-tagline-border-color: rgba(255, 255, 255, 0.5);
+    --banner-p-color: #B8B8B8;
+    --banner-button-color: #fff;
+}
+
 .banner {
     margin-top: 0;
     padding: 260px 0 100px 0;
@@ -311,16 +338,18 @@ nav.navbar .navbar-toggler-icon.open span:nth-child(3) {
     background-size: cover;
     background-repeat: no-repeat;
 }
+
 .banner .tagline {
     font-weight: 700;
     letter-spacing: 0.8px;
     padding: 8px 10px;
-    background: linear-gradient(90.21deg, rgba(170, 54, 124, 0.5) -5.91%, rgba(74, 47, 189, 0.5) 111.58%);
-    border: 1px solid rgba(255, 255, 255, 0.5);
+    background: var(--banner-bg-color);
+    border: 1px solid var(--banner-tagline-border-color);
     font-size: 20px;
     margin-bottom: 16px;
     display: inline-block;
 }
+
 .banner h1 {
     font-size: 65px;
     font-weight: 700;
@@ -329,13 +358,15 @@ nav.navbar .navbar-toggler-icon.open span:nth-child(3) {
     margin-bottom: 20px;
     display: block;
 }
+
 .banner p {
-    color: #B8B8B8;
+    color: var(--banner-p-color);
     font-size: 18px;
     letter-spacing: 0.8px;
     line-height: 1.5em;
     width: 96%;
 }
+
 @media (max-width: 400px) {
     .banner h1 {
         font-size: 35px;
@@ -344,6 +375,7 @@ nav.navbar .navbar-toggler-icon.open span:nth-child(3) {
         font-size: 16px;
     }
 }
+
 @media (max-width: 1400px) {
     .banner h1 {
         font-size: 35px;
@@ -352,8 +384,9 @@ nav.navbar .navbar-toggler-icon.open span:nth-child(3) {
         font-size: 35px;
     }
 }
+
 .banner button {
-    color: #fff;
+    color: var(--banner-button-color);
     font-weight: 700;
     font-size: 20px;
     margin-top: 60px;
@@ -361,18 +394,22 @@ nav.navbar .navbar-toggler-icon.open span:nth-child(3) {
     display: flex;
     align-items: center;
 }
+
 .banner button svg {
     font-size: 25px;
     margin-left: 10px;
     transition: 0.3s ease-in-out;
     line-height: 1;
 }
+
 .banner button:hover svg {
     margin-left: 25px;
 }
+
 .banner img {
     animation: updown 3s linear infinite;
 }
+
 @keyframes updown {
     0% {
         transform: translateY(-20px);
@@ -384,47 +421,61 @@ nav.navbar .navbar-toggler-icon.open span:nth-child(3) {
         transform: translateY(-20px);
     }
 }
+
 .txt-rotate > .wrap {
     border-right: 0.08em solid #666;
 }
 
 /************ Skills Css ************/
+/* Skill CSS */
+:root {
+    --skill-bg-color: #151515;
+    --skill-text-color: #B8B8B8;
+}
+
 .skill {
     padding: 0 0 50px 0;
     position: relative;
 }
+
 .skill-bx {
-    background: #151515;
+    background: var(--skill-bg-color);
     border-radius: 64px;
     text-align: center;
     padding: 60px 50px;
     margin-top: -60px;
 }
+
 .skill h2 {
     font-size: 45px;
     font-weight: 700;
 }
+
 .skill p {
-    color: #B8B8B8;
+    color: var(--skill-text-color);
     font-size: 18px;
     letter-spacing: 0.8px;
     line-height: 1.5em;
     margin: 14px 0 75px 0;
 }
+
 .skill-slider {
     width: 80%;
     margin: 0 auto;
     position: relative;
 }
+
 .react-multi-carousel-item {
     display: flex;
     justify-content: center;
     align-items: center;
 }
+
 .skill-slider .item img {
     width: 50%;
     margin: 0 auto 15px auto;
 }
+
 .background-image-left {
     top: 28%;
     position: absolute;
@@ -434,18 +485,27 @@ nav.navbar .navbar-toggler-icon.open span:nth-child(3) {
 }
 
 /************ Projects Css ************/
+:root {
+    --project-bg-color: black;
+    --project-text-color: #B8B8B8;
+    --project-gradient-color: linear-gradient(90.21deg, #AA367C -5.91%, #4A2FBD 111.58%);
+    --project-border-color: rgba(255, 255, 255, 0.5);
+}
+
 .project {
     padding: 160px 0 100px 0;
     position: relative;
-    background-color: black;
+    background-color: var(--project-bg-color);
 }
+
 .project h2 {
     font-size: 45px;
     font-weight: 700;
     text-align: center;
 }
+
 .project p {
-    color: #B8B8B8;
+    color: var(--project-text-color);
     font-size: 18px;
     letter-spacing: 0.8px;
     line-height: 1.5em;
@@ -453,6 +513,7 @@ nav.navbar .navbar-toggler-icon.open span:nth-child(3) {
     text-align: center;
     width: 56%;
 }
+
 .project .nav.nav-pills {
     width: 72%;
     margin: 0 auto;
@@ -460,16 +521,18 @@ nav.navbar .navbar-toggler-icon.open span:nth-child(3) {
     background-color: rgb(255 255 255 / 10%);
     overflow: hidden;
 }
+
 .project .nav.nav-pills .nav-item {
     width: 33.33333%;
 }
+
 .project .nav.nav-pills .nav-link {
     background-color: transparent;
     border-radius: 0;
     padding: 17px 0;
     color: #fff;
     width: 100%;
-    font-size: 17px;
+    font-size: 16px;
     letter-spacing: 0.8px;
     font-weight: 500;
     position: relative;
@@ -477,53 +540,63 @@ nav.navbar .navbar-toggler-icon.open span:nth-child(3) {
     text-align: center;
     z-index: 0;
 }
+
 .project .nav.nav-pills .nav-link::before {
     content: "";
     position: absolute;
     width: 0;
     height: 100%;
-    background: linear-gradient(90.21deg, #AA367C -5.91%, #4A2FBD 111.58%);
+    background: var(--project-gradient-color);
     top: 0;
     left: 0;
     z-index: -1;
     transition: 0.3s ease-in-out;
 }
+
 .project .nav.nav-pills .nav-link.active::before {
     width: 100% !important;
 }
+
 .project .nav.nav-pills .nav-link.active {
-    border: 2px solid rgba(255, 255, 255, 1);
+    border: 2px solid var(--project-border-color);
 }
+
 .nav-link#projects-tabs-tab-first {
     border: 2px solid rgba(255, 255, 255, 0.5);
     border-radius: 55px 0px 0px 55px;
 }
+
 .nav-link#projects-tabs-tab-second {
     border-top: 2px solid rgba(255, 255, 255, 0.5);
     border-bottom: 2px solid rgba(255, 255, 255, 0.5);
 }
+
 .nav-link#projects-tabs-tab-third {
     border: 2px solid rgba(255, 255, 255, 0.5);
     border-radius: 0 55px 55px 0;
 }
+
 .proj-imgbx {
     position: relative;
     border-radius: 30px;
     overflow: hidden;
     margin-bottom: 24px;
 }
+
 .proj-imgbx::before {
     content: "";
-    background: linear-gradient(90.21deg, #AA367C -5.91%, #4A2FBD 111.58%);
+    background: var(--project-gradient-color);
     opacity: 0.85;
     position: absolute;
     width: 100%;
     height: 0;
     transition: 0.4s ease-in-out;
 }
+
 .proj-imgbx:hover::before {
     height: 100%;
 }
+
 .proj-txtx {
     display: flex;
     flex-direction: column;
@@ -539,10 +612,12 @@ nav.navbar .navbar-toggler-icon.open span:nth-child(3) {
     opacity: 0;
     width: 100%;
 }
+
 .proj-imgbx:hover .proj-txtx {
     top: 50%;
     opacity: 1;
 }
+
 .proj-txtx h4 {
     font-size: 30px;
     font-weight: 700;
@@ -551,9 +626,11 @@ nav.navbar .navbar-toggler-icon.open span:nth-child(3) {
     color: #fff;
     transition: 0.5s ease-in-out;
 }
+
 .proj-txtx h4:hover {
-    color:#B8B8B8;
+    color: var(--project-text-color);
 }
+
 .proj-txtx span {
     font-style: italic;
     font-weight: 400;
@@ -561,14 +638,16 @@ nav.navbar .navbar-toggler-icon.open span:nth-child(3) {
     letter-spacing: 0.8px;
     color: #fff;
 }
+
 @media (max-width: 1300px) {
-    .proj-txtx h4{
+    .proj-txtx h4 {
         font-size: 16px;
     }
-    .proj-txtx button span{
+    .proj-txtx button span {
         font-size: 14px;
     }
 }
+
 .background-image-right {
     top: 20%;
     position: absolute;
@@ -577,39 +656,58 @@ nav.navbar .navbar-toggler-icon.open span:nth-child(3) {
     right: 0;
     z-index: -4;
 }
+
 @media (max-width: 767px) {
     .project {
         padding: 280px 0 0 0;
     }
-}
-.project .nav.nav-pills .nav-link.active::before {
-    width: 100% !important;
-    border-radius: 50px; /* Добавляем закругление */
-}
-.project .nav.nav-pills .nav-link.active.rounded-left::before {
-    width: 100% !important;
-    border-radius: 50px 0 0 50px; /* Закругление слева */
-}
-.project .nav.nav-pills .nav-link.active.rounded::before {
-    width: 100% !important;
-    border-radius: 0; /* Без закругления */
-}
-.project .nav.nav-pills .nav-link.active.rounded-right::before {
-    width: 100% !important;
-    border-radius: 0 50px 50px 0; /* Закругление справа */
+    .project .nav.nav-pills .nav-link {
+        font-size: 14px;
+    }
 }
 
-/* single Project */
+.project .nav.nav-pills .nav-link.active::before {
+    width: 100% !important;
+    border-radius: 50px; 
+}
+
+.project .nav.nav-pills .nav-link.active.rounded-left::before {
+    width: 100% !important;
+    border-radius: 50px 0 0 50px; 
+}
+
+.project .nav.nav-pills .nav-link.active.rounded::before {
+    width: 100% !important;
+    border-radius: 0; 
+}
+
+.project .nav.nav-pills .nav-link.active.rounded-right::before {
+    width: 100% !important;
+    border-radius: 0 50px 50px 0; 
+}
+
+/************ Single Projects Css ************/
+:root {
+    --project-button-navlink-color: #fff;
+    --project-button-gitlink-color: #fff;
+    --project-button-gitlink-bg-color: transparent;
+    --project-button-gitlink-border-color: #fff;
+    --project-gallery-bg-color: #fff;
+    --project-gallery-box-shadow-color: rgba(212, 212, 212, 0.2);
+}
+
 .singleProject {
     margin-top: 150px;
 }
+
 @media (max-width: 425px) {
     .singleProject {
         margin: 250px 0 0 0;
     }
 }
+
 .singleProject .button-NavLink {
-    color: #fff;
+    color: var(--project-button-navlink-color);
     font-weight: 700;
     font-size: 20px;
     margin-bottom: 24px;
@@ -617,67 +715,79 @@ nav.navbar .navbar-toggler-icon.open span:nth-child(3) {
     display: flex;
     align-items: center;
 }
+
 .singleProject .button-NavLink svg {
     font-size: 25px;
     margin-left: 10px;
     transition: 0.3s ease-in-out;
     line-height: 1;
 }
+
 .singleProject .button-NavLink:hover svg {
     margin-left: 25px;
 }
+
 .project-details {
     text-align: center;
 }
-.project-details h2{
+
+.project-details h2 {
     padding-bottom: 24px;
 }
+
 .gallery {
     margin: 0 auto;
     margin-bottom: 32px;
     max-width: 1000px;
-    background-color: #fff;
+    background-color: var(--project-gallery-bg-color);
     border-radius: 16px;
     padding: 32px 0;
-    -webkit-box-shadow: 0px 5px 10px 2px rgba(212, 212, 212, 0.2);
-    -moz-box-shadow: 0px 5px 10px 2px rgba(209, 209, 209, 0.2);
-    box-shadow: 0px 5px 10px 2px rgba(214, 214, 214, 0.2);
+    -webkit-box-shadow: 0px 5px 10px 2px var(--project-gallery-box-shadow-color);
+    -moz-box-shadow: 0px 5px 10px 2px var(--project-gallery-box-shadow-color);
+    box-shadow: 0px 5px 10px 2px var(--project-gallery-box-shadow-color);
 }
-.gallery img{
+
+.gallery img {
     max-width: 800px;
     object-fit: contain;
 }
-.project-skills{
+
+.project-skills {
     font-size: 24px;
 }
+
 .project-details .button-GitLink {
     font-weight: 700;
-    color: #fff;
-    border: 1px solid #fff;
+    color: var(--project-button-gitlink-color);
+    border: 1px solid var(--project-button-gitlink-border-color);
     padding: 24px;
     font-size: 16px;
     position: relative;
-    background-color: transparent;
+    background-color: var(--project-button-gitlink-bg-color);
     transition: 0.3s ease-in-out;
-    margin-top: 32px;
+    margin: 32px 0;
 }
+
 .project-details .button-GitLink span {
     z-index: 1;
 }
+
 .project-details .button-GitLink::before {
     content: "";
     width: 0%;
     height: 100%;
     position: absolute;
-    background-color: #fff;
+    background-color: var(--project-button-gitlink-color);
     left: 0;
     top: 0;
     z-index: -1;
     transition: 0.3s ease-in-out;
 }
+
 .project-details .button-GitLink:hover {
     color: #121212;
 }
+
 .project-details .button-GitLink:hover::before {
     content: "";
     width: 100%;
@@ -686,24 +796,44 @@ nav.navbar .navbar-toggler-icon.open span:nth-child(3) {
 }
 
 /************ Contact Css ************/
+:root {
+    --contact-gradient-start: #AA367C;
+    --contact-gradient-end: #4A2FBD;
+    --contact-input-bg-color: rgba(255, 255, 255, 0.1);
+    --contact-input-border-color: rgba(255, 255, 255, 0.5);
+    --contact-input-color: #fff;
+    --contact-input-placeholder-color: #fff;
+    --contact-input-focus-bg-color: rgba(255, 255, 255, 1);
+    --contact-input-focus-color: #121212;
+    --contact-input-placeholder-focus-color: #121212;
+    --contact-button-color: #000;
+    --contact-button-bg-color: #fff;
+    --contact-button-hover-color: #fff;
+    --contact-button-before-bg-color: #121212;
+}
+
 .contact {
-    background: linear-gradient(90.21deg, #AA367C -5.91%, #4A2FBD 111.58%);
+    background: linear-gradient(90.21deg, var(--contact-gradient-start) -5.91%, var(--contact-gradient-end) 111.58%);
     padding: 60px 0 100px 0;
 }
+
 .contact img {
     width: 92%;
 }
+
 .contact h2 {
     font-size: 45px;
     font-weight: 700;
     margin-bottom: 30px;
 }
-.contact form input, .contact form textarea {
+
+.contact form input,
+.contact form textarea {
     width: 100%;
-    background: rgba(255, 255, 255, 0.1);
-    border: 1px solid rgba(255, 255, 255, 0.5);
+    background: var(--contact-input-bg-color);
+    border: 1px solid var(--contact-input-border-color);
     border-radius: 20px;
-    color: #fff;
+    color: var(--contact-input-color);
     margin: 0 0 8px 0;
     padding: 18px 26px;
     font-weight: 500;
@@ -711,40 +841,51 @@ nav.navbar .navbar-toggler-icon.open span:nth-child(3) {
     letter-spacing: 0.8px;
     transition: 0.3s ease-in-out;
 }
-.contact form input:focus, .contact form textarea:focus {
-    background: rgba(255, 255, 255, 1);
-    color: #121212;
+
+.contact form input:focus,
+.contact form textarea:focus {
+    background: var(--contact-input-focus-bg-color);
+    color: var(--contact-input-focus-color);
 }
-.contact form input::placeholder, .contact form textarea::placeholder {
+
+.contact form input::placeholder,
+.contact form textarea::placeholder {
     font-size: 16px;
     font-weight: 400;
-    color: #fff;
+    color: var(--contact-input-placeholder-color);
 }
-.contact form input:focus::placeholder, .contact form textarea:focus::placeholder {
-    color: #121212;
+
+.contact form input:focus::placeholder,
+.contact form textarea:focus::placeholder {
+    color: var(--contact-input-placeholder-focus-color);
     opacity: 0.8;
 }
+
 .contact form button {
     font-weight: 700;
-    color: #000;
-    background-color: #fff;
+    color: var(--contact-button-color);
+    background-color: var(--contact-button-bg-color);
     padding: 14px 48px;
     font-size: 18px;
     margin-top: 25px;
     border-radius: 0;
     position: relative;
     transition: 0.3s ease-in-out;
+    border-radius: 8px;
 }
+
 .contact form button span {
     z-index: 1;
     position: relative;
 }
+
 .contact form button:hover {
-    color: #fff;
+    color: var(--contact-button-hover-color);
 }
+
 .contact form button::before {
     content: "";
-    background: #121212;
+    background: var(--contact-button-before-bg-color);
     width: 0;
     height: 100%;
     position: absolute;
@@ -753,21 +894,27 @@ nav.navbar .navbar-toggler-icon.open span:nth-child(3) {
     z-index: 0;
     transition: 0.3s ease-in-out;
 }
+
 .contact form button:hover::before {
     width: 100%;
 }
 
 /************ Footer Css ************/
+:root {
+    --footer-bcc-color: #121212;
+    --footer-color: #fff;
+    --footer-text: #b8b8b8;
+}
 .footer {
     padding: 60px 0;
-    background-color: #121212;
-    color: #fff;
+    background-color: var(--footer-bcc-color);
+    color: var(--footer-color);
     text-align: center;
 }
 .newsletter-bx {
-    background: #FFFFFF;
+    background: var(--footer-color);
     border-radius: 55px;
-    color: #121212;
+    color: var(--footer-bcc-color);
     padding: 50px 80px;
     margin-bottom: 50px;
 }
@@ -778,7 +925,7 @@ nav.navbar .navbar-toggler-icon.open span:nth-child(3) {
     margin-bottom: 20px;
 }
 .new-email-bx {
-    background: #fff;
+    background: var(--footer-color);
     padding: 5px;
     border-radius: 20px;
     position: relative;
@@ -801,7 +948,7 @@ nav.navbar .navbar-toggler-icon.open span:nth-child(3) {
 }
 .new-email-bx::after {
     content: "";
-    background: #fff;
+    background: var(--footer-color);
     border-radius: 20px;
     position: absolute;
     z-index: -1;
@@ -812,7 +959,7 @@ nav.navbar .navbar-toggler-icon.open span:nth-child(3) {
 }
 .new-email-bx input {
     width: 100%;
-    color: #121212;
+    color: var(--footer-bcc-color);
     font-weight: 500;
     background: transparent;
     border: 0;
@@ -821,7 +968,7 @@ nav.navbar .navbar-toggler-icon.open span:nth-child(3) {
 .new-email-bx button {
     background: linear-gradient(90.21deg, #AA367C -5.91%, #4A2FBD 111.58%);
     padding: 14px 48px;
-    color: #fff;
+    color: var(--footer-color);
     font-weight: 500;
     letter-spacing: 0.5px;
     border-radius: 18px;
@@ -848,18 +995,21 @@ nav.navbar .navbar-toggler-icon.open span:nth-child(3) {
 .footer p {
     font-weight: 400;
     font-size: 14px;
-    color: #B8B8B8;
+    color: var(--footer-text);
     letter-spacing: 0.5px;
     margin-top: 20px;
 }
 
-/* Ошибка и модельные окна */
+/************ Error Css ************/
+:root {
+    --error: tomato;
+}
 .error-messages {
-    color: tomato;
+    color: var(--error);
 }
 .modal_title {
-    color: tomato;
+    color: var(--error);
 }
 .modal_body {
-    color: tomato;
+    color: var(--error);
 }

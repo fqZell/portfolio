@@ -29,17 +29,17 @@ const ProjectsPage = () => {
                 >
                   <Nav.Item>
                     <Nav.Link eventKey="first" className="rounded-left">
-                      Html, css, JS
+                      Вкладка 1
                     </Nav.Link>
                   </Nav.Item>
                   <Nav.Item>
                     <Nav.Link eventKey="second" className="rounded">
-                      React, node.js
+                    Вкладка 2
                     </Nav.Link>
                   </Nav.Item>
                   <Nav.Item>
                     <Nav.Link eventKey="third" className="rounded-right">
-                      Laravel, mySQL
+                    Вкладка 3
                     </Nav.Link>
                   </Nav.Item>
                 </Nav>

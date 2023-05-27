@@ -16,7 +16,7 @@ const Root = () => {
 
                 <main>
                     <Outlet />
-                    <ContactForm />
+                    {/* <ContactForm /> */}
                 </main>
 
                 <footer>
