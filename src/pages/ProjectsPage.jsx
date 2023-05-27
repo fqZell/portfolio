@@ -73,7 +73,7 @@ const ProjectsPage = () => {
                   </Tab.Pane>
                 </Tab.Content>
               </Tab.Container>
-            </Col>
+            </Col> 
           </Row>
         </Container>
         <img className="background-image-right" src={colorSharp2}></img>

@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from 'react'
+import 'animate.css'
+import TrackVisibility from 'react-on-screen';
 
 import { Col, Container, Row } from 'react-bootstrap'
 import { ArrowRightCircle } from 'react-bootstrap-icons';
@@ -53,10 +55,11 @@ const Banner = () => {
         <Container>
           <Row className='aligh-items-center'>
             <Col xs={12} md={6} xl={7}>
-              {/* {({ isVisible }) => 
-              <div className={isVisible ? "animate__animated animate__fadeIn" : ""}> */}
+              <TrackVisibility>
+              {({ isVisible }) => 
+              <div className={isVisible ? "animate__animated animate__fadeIn" : ""}>
                 <span className="tagline">Добро пожаловать в мое портфолио</span>
-                <h1>{`Я `} 
+                <h1>{`Я `}
                 <span className='txt-rotate' data-period="1000" 
                 data-rotate='[ "Веб Разработчик", "Веб Дизайнер", "UI/UX Дизайнер" ]'>
                 <span className="wrap">{text}</span>
@@ -64,14 +67,17 @@ const Banner = () => {
                 </h1>
                 <p>Привет, я веб-разработчик, специализирующийся на создании красивых и эффективных веб-сайтов. Мой опыт включает работу с различными языками программирования и фреймворками, такими как React js, Node.js, Laravel и другие. Будь то построение отдельной веб-страницы, интернет-магазина или полноценного веб-приложения, я всегда стремлюсь к созданию продуктов, которые станут наилучшими в своем классе, с учетом потребностей клиента и конечных пользователей.</p>
                 <button onClick={() => console.log('connect')}>Давайте свяжемся <ArrowRightCircle size={25} /></button>
-              {/* </div>} */}
+              </div>}
+              </TrackVisibility>
             </Col>
 
             <Col xs={12} md={6} xl={5}>
-              {/* {({ isVisible }) => 
-              <div className={isVisible ? "animate__animated animate__fadeIn" : ""}> */}
+              <TrackVisibility>
+              {({ isVisible }) => 
+              <div className={isVisible ? "animate__animated animate__fadeIn" : ""}>
                 <img src={headerImg} alt="Header Img" />
-              {/* </div>} */}
+              </div>}
+              </TrackVisibility>
             </Col>
           </Row>
         </Container>

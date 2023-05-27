@@ -16,6 +16,11 @@
 }
 
 /************ Default Css ************/
+:root {
+    --primary-color: #fff;
+    --secondary-color: #121212;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -31,8 +36,8 @@ body {
     font-weight: 400;
     overflow-x: hidden;
     position: relative;
-    background-color: #121212 !important;
-    color: #fff !important;
+    background-color: var(--secondary-color) !important;
+    color: var(--primary-color) !important;
     font-family: 'Centra', sans-serif !important;
 }
 
@@ -78,11 +83,20 @@ p.success {
     color: green;
 }
 
-p.danger {
-    color: red;
-}
-
 /************ Header Css ************/
+:root {
+    --navbar-primary-color: #fff;
+    --navbar-secondary-color: #121212;
+    --navbar-link-opacity: 0.75;
+    --navbar-hover-opacity: 1;
+    --social-icon-background: rgba(217, 217, 217, 0.1);
+    --social-icon-border: 1px solid rgba(255, 255, 255, 0.5);
+    --button-color: #fff;
+    --button-border: 1px solid #fff;
+    --button-hover-color: #121212;
+    --toggler-icon-color: #fff;
+    --toggler-icon-span-color: #fff;
+}
 
 nav.navbar img {
     width: 45px;
@@ -100,7 +114,7 @@ nav.navbar {
 
 nav.navbar.scrolled {
     padding: 0px 0;
-    background-color: #121212;
+    background-color: var(--navbar-secondary-color);
 }
 
 nav.navbar a.navbar-brand {
@@ -109,16 +123,16 @@ nav.navbar a.navbar-brand {
 
 nav.navbar .navbar-nav .navbar-link {
     font-weight: 400;
-    color: #fff !important;
+    color: var(--navbar-primary-color) !important;
     letter-spacing: 0.8px;
     padding: 0 25px;
     font-size: 18px;
-    opacity: 0.75;
+    opacity: var(--navbar-link-opacity);
 }
 
 nav.navbar .navbar-nav a.navbar-link:hover,
 nav.navbar .navbar-nav a.navbar-link.active {
-    opacity: 1;
+    opacity: var(--navbar-hover-opacity);
 }
 
 span.navbar-text {
@@ -134,14 +148,14 @@ span.navbar-text {
 .social-icon a {
     width: 42px;
     height: 42px;
-    background: rgba(217, 217, 217, 0.1);
+    background: var(--social-icon-background);
     display: inline-flex;
     border-radius: 50%;
     margin-right: 6px;
     align-items: center;
     justify-content: center;
     line-height: 1;
-    border: 1px solid rgba(255, 255, 255, 0.5);
+    border: var(--social-icon-border);
 }
 
 .social-icon a::before {
@@ -163,7 +177,7 @@ span.navbar-text {
     width: 100%;
     z-index: 1;
     transition: 0.3s ease-in-out;
-    color: #fff;
+    color: var(--navbar-primary-color);
 }
 
 .social-icon a .icon:hover {
@@ -172,8 +186,8 @@ span.navbar-text {
 
 .navbar-text button {
     font-weight: 700;
-    color: #fff;
-    border: 1px solid #fff;
+    color: var(--button-color);
+    border: var(--button-border);
     padding: 18px 34px;
     font-size: 18px;
     margin-left: 18px;
@@ -181,23 +195,27 @@ span.navbar-text {
     background-color: transparent;
     transition: 0.3s ease-in-out;
 }
+
 .navbar-text button span {
     z-index: 1;
 }
+
 .navbar-text button::before {
     content: "";
     width: 0%;
     height: 100%;
     position: absolute;
-    background-color: #fff;
+    background-color: var(--navbar-primary-color);
     left: 0;
     top: 0;
     z-index: -1;
     transition: 0.3s ease-in-out;
 }
+
 .navbar-text button:hover {
-    color: #121212;
+    color: var(--button-hover-color);
 }
+
 .navbar-text button:hover::before {
     content: "";
     width: 100%;
@@ -216,20 +234,20 @@ nav.navbar .navbar-toggler:focus {
     height: 17px;
     background-image: none;
     position: relative;
-    /* border-bottom: 2px solid #fff; */
     transition: all 300ms linear;
     top: -2px;
     cursor: pointer;
 }
 
 nav.navbar .navbar-toggler-icon:focus {
-    border-bottom: 2px solid #fff;
+    border-bottom: 2px solid var(--navbar-primary-color);
 }
+
 nav.navbar .navbar-toggler-icon span {
     position: absolute;
     width: 100%;
     height: 2px;
-    background-color: #fff;
+    background-color: var(--toggler-icon-span-color);
     display: block;
     transition: all 300ms linear;
 }
@@ -239,7 +257,6 @@ nav.navbar .navbar-toggler-icon:before {
     width: 24px;
     position: absolute;
     height: 2px;
-    /* background-color: #fff; */
     top: 0;
     left: 0;
     content: '';
@@ -250,41 +267,40 @@ nav.navbar .navbar-toggler-icon:before {
 nav.navbar .navbar-toggler-icon:after {
     top: 8px;
 }
-  
-  nav.navbar .navbar-toggler-icon span {
+
+nav.navbar .navbar-toggler-icon span {
     position: absolute;
     width: 100%;
     height: 2px;
-    background-color: #fff;
+    background-color: var(--toggler-icon-span-color);
     display: block;
     transition: all 300ms linear;
-  }
-  
-  nav.navbar .navbar-toggler-icon span:nth-child(1) {
+}
+
+nav.navbar .navbar-toggler-icon span:nth-child(1) {
     transform: translateY(-4px);
-  }
-  
-  nav.navbar .navbar-toggler-icon span:nth-child(2) {
+}
+
+nav.navbar .navbar-toggler-icon span:nth-child(2) {
     transform: translateY(0);
-  }
-  
-  nav.navbar .navbar-toggler-icon span:nth-child(3) {
+}
+
+nav.navbar .navbar-toggler-icon span:nth-child(3) {
     transform: translateY(4px);
-  }
-  
-  nav.navbar .navbar-toggler-icon.open span:nth-child(1) {
+}
+
+nav.navbar .navbar-toggler-icon.open span:nth-child(1) {
     transform: translateY(0) rotate(45deg);
-  }
-  
-  nav.navbar .navbar-toggler-icon.open span:nth-child(2) {
+}
+
+nav.navbar .navbar-toggler-icon.open span:nth-child(2) {
     transform: translateX(100%);
     opacity: 0;
-  }
-  
-  nav.navbar .navbar-toggler-icon.open span:nth-child(3) {
+}
+
+nav.navbar .navbar-toggler-icon.open span:nth-child(3) {
     transform: translateY(0) rotate(-45deg);
-  }
-  
+}
 
 /************ Banner Css ************/
 .banner {

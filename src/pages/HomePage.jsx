@@ -56,8 +56,6 @@ const HomePage = () => {
                 </Container>
             </section>
 
-            <ContactForm />
-
         </>
     )
 }
