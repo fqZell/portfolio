@@ -1,4 +1,136 @@
 /************ Custom Font ************/
+html[data-theme='dark'] {
+    --primary-color: #ffffff;
+    --secondary-color: #121212;
+
+    --navbar-primary-color: #fff;
+    --navbar-secondary-color: #121212;
+    --navbar-link-opacity: 0.75;
+    --navbar-hover-opacity: 1;
+    --social-icon-background: rgba(217, 217, 217, 0.1);
+    --social-icon-border: 1px solid rgba(255, 255, 255, 0.5);
+    --button-color: #fff;
+    --button-border: 1px solid #fff;
+    --button-hover-color: #121212;
+    --toggler-icon-color: #fff;
+    --toggler-icon-span-color: #fff;
+    --navbar-icon-color: #fff;
+
+    --banner-bg-color: linear-gradient(90.21deg, rgba(170, 54, 124, 0.5) -5.91%, rgba(74, 47, 189, 0.5) 111.58%);
+    --banner-tagline-border-color: rgba(255, 255, 255, 0.5);
+    --banner-p-color: #B8B8B8;
+    --banner-button-color: #fff;
+
+    --skill-bg-color: #151515;
+    --skill-title-color: #b8b8b8
+    --skill-text-color: #B8B8B8;
+
+    --project-bg-color: black;
+    --project-text-color: #B8B8B8;
+    --project-gradient-color: linear-gradient(90.21deg, #AA367C -5.91%, #4A2FBD 111.58%);
+    --project-border-color: rgba(255, 255, 255, 0.5);
+    --project-title-color: #fff;
+    --project-tab-color: #fff;
+    --project-link-color: #fff;
+    --project-card-bcc: #121212;
+
+    --project-button-navlink-color: #fff;
+    --project-button-gitlink-color: #fff;
+    --project-button-gitlink-bg-color: transparent;
+    --project-button-gitlink-border-color: #fff;
+    --project-gallery-bg-color: #fff;
+    --project-gallery-box-shadow-color: rgba(212, 212, 212, 0.2);
+    --project-navlink-color: #fff;
+
+    --contact-gradient-start: #AA367C;
+    --contact-gradient-end: #4A2FBD;
+    --contact-input-bg-color: rgba(255, 255, 255, 0.1);
+    --contact-input-border-color: rgba(255, 255, 255, 0.5);
+    --contact-input-color: #fff;
+    --contact-input-placeholder-color: #fff;
+    --contact-input-focus-bg-color: rgba(255, 255, 255, 1);
+    --contact-input-focus-color: #121212;
+    --contact-input-placeholder-focus-color: #121212;
+    --contact-button-color: #000;
+    --contact-button-bg-color: #fff;
+    --contact-button-hover-color: #fff;
+    --contact-button-before-bg-color: #121212;
+
+    --footer-bcc-color: #121212;
+    --footer-color: #fff;
+    --footer-text: #b8b8b8;
+    --footer-btn-color: #fff;
+    --footer-placeholder-color: #121212;
+
+    --error: tomato;
+}
+
+html[data-theme='light'] {
+    --primary-color: #ffffff;
+    --secondary-color: #ffffff;
+
+    --navbar-primary-color: #5C62EC;
+    --navbar-secondary-color: #fff;
+    --navbar-link-opacity: 0.75;
+    --navbar-hover-opacity: 1;
+    --social-icon-background: #5C62EC;
+    --social-icon-border: 1px solid #fff;
+    --button-color: #5C62EC;
+    --button-border: 1px solid #5C62EC;
+    --button-hover-color: #121212;
+    --toggler-icon-color: #fff;
+    --toggler-icon-span-color: #5C62EC;
+    --navbar-icon-color: #fff;
+
+    --banner-bg-color: linear-gradient(90.21deg, rgba(170, 54, 124, 0.5) -5.91%, rgba(74, 47, 189, 0.5) 111.58%);
+    --banner-tagline-border-color: rgba(255, 255, 255, 0.5);
+    --banner-p-color: #B8B8B8;
+    --banner-button-color: #fff;
+
+    --skill-bg-color: #5C62EC;
+    --skill-title-color: #121212
+    --skill-text-color: #121212;
+
+    --project-bg-color: #fff;
+    --project-text-color: #121212;
+    --project-gradient-color: linear-gradient(90.21deg, #AA367C -5.91%, #4A2FBD 111.58%);
+    --project-border-color: rgba(255, 255, 255, 0.5);
+    --project-title-color: #121212;
+    --project-tab-color: #5C62EC;
+    --project-link-color: #121212;
+    --project-card-bcc: #fff;
+
+    --project-button-navlink-color: #121212;
+    --project-button-gitlink-color: #5C62EC;
+    --project-button-gitlink-bg-color: transparent;
+    --project-button-gitlink-border-color: #121212;
+    --project-gallery-bg-color: #fff;
+    --project-gallery-box-shadow-color: rgba(212, 212, 212, 0.2);
+    --project-navlink-color: #121212;
+
+    --contact-gradient-start: #AA367C;
+    --contact-gradient-end: #4A2FBD;
+    --contact-input-bg-color: rgba(255, 255, 255, 0.1);
+    --contact-input-border-color: rgba(255, 255, 255, 0.5);
+    --contact-input-color: #fff;
+    --contact-input-placeholder-color: #fff;
+    --contact-input-focus-bg-color: rgba(255, 255, 255, 1);
+    --contact-input-focus-color: #121212;
+    --contact-input-placeholder-focus-color: #121212;
+    --contact-button-color: #000;
+    --contact-button-bg-color: #fff;
+    --contact-button-hover-color: #fff;
+    --contact-button-before-bg-color: #121212;
+
+    --footer-bcc-color: #fff;
+    --footer-color: #5C62EC;
+    --footer-text: #121212;
+    --footer-btn-color: #fff;
+    --footer-placeholder-color: #fff;
+
+    --error: tomato;
+}
+
 @font-face {
 	font-family: Centra;
 	src: url('./assets/font/CentraNo2-Bold.ttf');
@@ -16,11 +148,6 @@
 }
 
 /************ Default Css ************/
-:root {
-    --primary-color: #fff;
-    --secondary-color: #121212;
-}
-
 * {
     margin: 0;
     padding: 0;
@@ -39,12 +166,14 @@ body {
     background-color: var(--secondary-color) !important;
     color: var(--primary-color) !important;
     font-family: 'Centra', sans-serif !important;
+    transition: background-color 1000ms linear;
 }
 
 h1, h2, h3, h4, h5, h6 {
     margin: 0;
     padding: 0;
     line-height: normal;
+    transition: color 1000ms linear;
 }
 
 p, a, li, button, ul {
@@ -52,6 +181,7 @@ p, a, li, button, ul {
     padding: 0;
     line-height: normal;
     text-decoration: none;
+    transition: color 1000ms linear;
 }
 
 a:hover {
@@ -70,6 +200,7 @@ button {
 
 input:focus, textarea:focus, select:focus {
     outline: none;
+    transition: color 500ms linear;
 }
 
 @media (min-width:1700px) {
@@ -84,20 +215,6 @@ p.success {
 }
 
 /************ Header CSS ************/
-:root {
-    --navbar-primary-color: #fff;
-    --navbar-secondary-color: #121212;
-    --navbar-link-opacity: 0.75;
-    --navbar-hover-opacity: 1;
-    --social-icon-background: rgba(217, 217, 217, 0.1);
-    --social-icon-border: 1px solid rgba(255, 255, 255, 0.5);
-    --button-color: #fff;
-    --button-border: 1px solid #fff;
-    --button-hover-color: #121212;
-    --toggler-icon-color: #fff;
-    --toggler-icon-span-color: #fff;
-}
-
 nav.navbar img {
     width: 45px;
     height: 45px;
@@ -177,7 +294,7 @@ span.navbar-text {
     width: 100%;
     z-index: 1;
     transition: 0.3s ease-in-out;
-    color: var(--navbar-primary-color);
+    color: var(--navbar-icon-color);
 }
 
 .social-icon a .icon:hover {
@@ -218,6 +335,10 @@ span.navbar-text {
 
 .navbar-text button:hover::before {
     width: 100%;
+}
+
+.navbar-toggler  {
+    color: inherit;
 }
 
 nav.navbar .navbar-toggler:active,
@@ -322,14 +443,60 @@ nav.navbar .navbar-toggler-icon.open span:nth-child(3) {
     }
 }
 
-/************ Banner Css ************/
-:root {
-    --banner-bg-color: linear-gradient(90.21deg, rgba(170, 54, 124, 0.5) -5.91%, rgba(74, 47, 189, 0.5) 111.58%);
-    --banner-tagline-border-color: rgba(255, 255, 255, 0.5);
-    --banner-p-color: #B8B8B8;
-    --banner-button-color: #fff;
+.theme-switcher {
+    position: relative;
+    display: inline-block;
+    width: 40px;
+    height: 24px;
 }
 
+.theme-switcher input[type="checkbox"] {
+    display: none;
+}
+
+.theme-switcher label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #5C62EC;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.theme-switcher label:before {
+    content: '';
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: 20px;
+    height: 20px;
+    background-color: #fff;
+    border-radius: 50%;
+    transition: transform 0.3s;
+}
+
+.theme-switcher input:checked + label {
+    background-color: #4d4d4d7e;
+}
+
+.theme-switcher input:checked + label:before {
+    transform: translateX(16px);
+}
+
+.iconMonn {
+    color: #5C62EC;
+    margin: 0 10px;
+}
+
+.iconSun {
+    color: #5C62EC;
+    margin: 0 10px;
+}
+
+/************ Banner Css ************/
 .banner {
     margin-top: 0;
     padding: 260px 0 100px 0;
@@ -427,12 +594,6 @@ nav.navbar .navbar-toggler-icon.open span:nth-child(3) {
 }
 
 /************ Skills Css ************/
-/* Skill CSS */
-:root {
-    --skill-bg-color: #151515;
-    --skill-text-color: #B8B8B8;
-}
-
 .skill {
     padding: 0 0 50px 0;
     position: relative;
@@ -449,6 +610,7 @@ nav.navbar .navbar-toggler-icon.open span:nth-child(3) {
 .skill h2 {
     font-size: 45px;
     font-weight: 700;
+    color: var(--skill-title-color);
 }
 
 .skill p {
@@ -485,13 +647,6 @@ nav.navbar .navbar-toggler-icon.open span:nth-child(3) {
 }
 
 /************ Projects Css ************/
-:root {
-    --project-bg-color: black;
-    --project-text-color: #B8B8B8;
-    --project-gradient-color: linear-gradient(90.21deg, #AA367C -5.91%, #4A2FBD 111.58%);
-    --project-border-color: rgba(255, 255, 255, 0.5);
-}
-
 .project {
     padding: 160px 0 100px 0;
     position: relative;
@@ -502,6 +657,7 @@ nav.navbar .navbar-toggler-icon.open span:nth-child(3) {
     font-size: 45px;
     font-weight: 700;
     text-align: center;
+    color: var(--project-title-color);
 }
 
 .project p {
@@ -530,7 +686,7 @@ nav.navbar .navbar-toggler-icon.open span:nth-child(3) {
     background-color: transparent;
     border-radius: 0;
     padding: 17px 0;
-    color: #fff;
+    color: var(--project-link-color);
     width: 100%;
     font-size: 16px;
     letter-spacing: 0.8px;
@@ -562,18 +718,27 @@ nav.navbar .navbar-toggler-icon.open span:nth-child(3) {
 }
 
 .nav-link#projects-tabs-tab-first {
-    border: 2px solid rgba(255, 255, 255, 0.5);
+    border: 2px solid var(--project-tab-color);
     border-radius: 55px 0px 0px 55px;
 }
 
 .nav-link#projects-tabs-tab-second {
-    border-top: 2px solid rgba(255, 255, 255, 0.5);
-    border-bottom: 2px solid rgba(255, 255, 255, 0.5);
+    border-top: 2px solid var(--project-tab-color);
+    border-bottom: 2px solid var(--project-tab-color);
 }
 
 .nav-link#projects-tabs-tab-third {
-    border: 2px solid rgba(255, 255, 255, 0.5);
+    border: 2px solid var(--project-tab-color);
     border-radius: 0 55px 55px 0;
+}
+
+.project-card {
+    background-color: var(--project-card-bcc);
+    padding: 32px;
+    border-radius: 16px;
+    -webkit-box-shadow: 0px 5px 10px 2px rgba(34, 60, 80, 0.2);
+    -moz-box-shadow: 0px 5px 10px 2px rgba(34, 60, 80, 0.2);
+    box-shadow: 0px 5px 10px 2px rgba(34, 60, 80, 0.2);
 }
 
 .proj-imgbx {
@@ -687,17 +852,8 @@ nav.navbar .navbar-toggler-icon.open span:nth-child(3) {
 }
 
 /************ Single Projects Css ************/
-:root {
-    --project-button-navlink-color: #fff;
-    --project-button-gitlink-color: #fff;
-    --project-button-gitlink-bg-color: transparent;
-    --project-button-gitlink-border-color: #fff;
-    --project-gallery-bg-color: #fff;
-    --project-gallery-box-shadow-color: rgba(212, 212, 212, 0.2);
-}
-
 .singleProject {
-    margin-top: 150px;
+    margin-top: 220px;
 }
 
 @media (max-width: 425px) {
@@ -733,6 +889,7 @@ nav.navbar .navbar-toggler-icon.open span:nth-child(3) {
 
 .project-details h2 {
     padding-bottom: 24px;
+    color: var(--project-navlink-color);
 }
 
 .gallery {
@@ -796,22 +953,6 @@ nav.navbar .navbar-toggler-icon.open span:nth-child(3) {
 }
 
 /************ Contact Css ************/
-:root {
-    --contact-gradient-start: #AA367C;
-    --contact-gradient-end: #4A2FBD;
-    --contact-input-bg-color: rgba(255, 255, 255, 0.1);
-    --contact-input-border-color: rgba(255, 255, 255, 0.5);
-    --contact-input-color: #fff;
-    --contact-input-placeholder-color: #fff;
-    --contact-input-focus-bg-color: rgba(255, 255, 255, 1);
-    --contact-input-focus-color: #121212;
-    --contact-input-placeholder-focus-color: #121212;
-    --contact-button-color: #000;
-    --contact-button-bg-color: #fff;
-    --contact-button-hover-color: #fff;
-    --contact-button-before-bg-color: #121212;
-}
-
 .contact {
     background: linear-gradient(90.21deg, var(--contact-gradient-start) -5.91%, var(--contact-gradient-end) 111.58%);
     padding: 60px 0 100px 0;
@@ -900,11 +1041,6 @@ nav.navbar .navbar-toggler-icon.open span:nth-child(3) {
 }
 
 /************ Footer Css ************/
-:root {
-    --footer-bcc-color: #121212;
-    --footer-color: #fff;
-    --footer-text: #b8b8b8;
-}
 .footer {
     padding: 60px 0;
     background-color: var(--footer-bcc-color);
@@ -965,10 +1101,13 @@ nav.navbar .navbar-toggler-icon.open span:nth-child(3) {
     border: 0;
     padding: 0 15px;
 }
+.new-email-bx input::placeholder {
+    color: var(--footer-placeholder-color);
+}
 .new-email-bx button {
     background: linear-gradient(90.21deg, #AA367C -5.91%, #4A2FBD 111.58%);
     padding: 14px 48px;
-    color: var(--footer-color);
+    color: var(--footer-btn-color);
     font-weight: 500;
     letter-spacing: 0.5px;
     border-radius: 18px;
@@ -1001,9 +1140,6 @@ nav.navbar .navbar-toggler-icon.open span:nth-child(3) {
 }
 
 /************ Error Css ************/
-:root {
-    --error: tomato;
-}
 .error-messages {
     color: var(--error);
 }

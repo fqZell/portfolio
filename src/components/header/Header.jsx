@@ -1,15 +1,23 @@
-import { Link, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { useState, useEffect } from "react";
 
 import { Navbar, Nav, Container } from "react-bootstrap";
-import logo from "../../assets/img/logo/logo.svg"
-import { faTelegram, faVk, faInstagram } from '@fortawesome/free-brands-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faTelegram, faVk, faInstagram } from '@fortawesome/free-brands-svg-icons';
+import logo from "../../assets/img/logo/logo.svg"
+import { useTheme } from "../../hooks/use-theme";
+import { faMoon, faSun } from "@fortawesome/free-solid-svg-icons";
 
 const Header = () => {
     const [activeLink, setActiveLink] = useState('home');
     const [scrolled, setScrolled] = useState(false);
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const { theme, setTheme } = useTheme()
+
+    const handleThemeToggle = () => {
+        const newTheme = theme === 'light' ? 'dark' : 'light';
+        setTheme(newTheme);
+    }
   
     useEffect(() => {
       const onScroll = () => {
@@ -37,6 +45,7 @@ const Header = () => {
                 <img src={logo} alt="Logo" />
                 </Navbar.Brand>
                 <Navbar.Toggle
+                    style={{ border: 'inherit' }}
                     aria-controls="basic-navbar-nav"
                     onClick={() => setIsMenuOpen(!isMenuOpen)}
                 >
@@ -67,7 +76,12 @@ const Header = () => {
                     <a href="#"><FontAwesomeIcon className="icon" icon={faVk} size='xl' /></a>
                     <a href="#"><FontAwesomeIcon className="icon" icon={faInstagram} size='xl' /></a>
                 </div>
-                <a href="#connect"><button className="vvd"><span>Давайте свяжемся</span></button></a>
+                <FontAwesomeIcon className="iconSun" icon={faSun} size='xl'></FontAwesomeIcon>
+                <div className="theme-switcher">
+                    <input type="checkbox" id="theme-toggle" onChange={handleThemeToggle} checked={theme === 'dark'} />
+                    <label htmlFor="theme-toggle"></label>
+                </div>
+                <FontAwesomeIcon className="iconMonn" icon={faMoon} size='xl'></FontAwesomeIcon>
                 </span>
             </Navbar.Collapse>
             </Container>

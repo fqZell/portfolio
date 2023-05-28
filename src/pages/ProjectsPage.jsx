@@ -43,7 +43,7 @@ const ProjectsPage = () => {
                     </Nav.Link>
                   </Nav.Item>
                 </Nav>
-                <Tab.Content id="slideInUp">
+                <Tab.Content id="slideInUp" className="project-card">
                   <Tab.Pane eventKey="first">
                     <Row>
                       {projects
