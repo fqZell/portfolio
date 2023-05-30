@@ -1210,4 +1210,8 @@ nav.navbar .navbar-toggler-icon.open span:nth-child(3) {
     border: 1px solid var(--calculator-border-color);
     border-radius: 8px;
     background-color: var(--calculator-bcc);
-}   
+}
+
+.calculator .calculator-warning {
+    font-size: 12px;
+}
