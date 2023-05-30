@@ -19,7 +19,6 @@ const Root = () => {
 
                 <main>
                     <Outlet />
-                    {/* <ContactForm /> */}
                 </main>
 
                 <footer>

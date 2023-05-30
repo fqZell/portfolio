@@ -12,12 +12,6 @@ const Project = ({ project }) => {
           <NavLink to={`/project/${project.id}`}>
             <h4>{project.title}</h4>
           </NavLink>
-          {/* <span>{project.skills}</span>
-          <NavLink to={project.githubLink} target="_blank" rel="noopener noreferrer">
-            <button>
-              <span>Перейти к репозиторию на GitHub</span>
-            </button>
-          </NavLink> */}
         </div>
       </div>
     </Col>

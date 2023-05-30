@@ -62,11 +62,11 @@ const Header = () => {
                         Главная
                     </NavLink>
                     <NavLink to={"/projects"} className={activeLink === 'projects' ? 'active navbar-link' : 'navbar-link'} 
-                    onClick={() => onUpdateActiveLink('skills')}>
+                    onClick={() => onUpdateActiveLink('projects')}>
                         Проекты
                     </NavLink>
-                    <NavLink to={"/"} className={activeLink === 'projects' ? 'active navbar-link' : 'navbar-link'} 
-                    onClick={() => onUpdateActiveLink('projects')}>
+                    <NavLink to={"/calculator"} className={activeLink === 'calculator' ? 'active navbar-link' : 'navbar-link'} 
+                    onClick={() => onUpdateActiveLink('calculator')}>
                         Калькулятор
                     </NavLink>
                 </Nav>

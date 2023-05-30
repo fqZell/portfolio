@@ -63,6 +63,12 @@ html[data-theme='dark'] {
     --footer-placeholder-color: #121212;
 
     --error: tomato;
+
+    --calculator-title-color: #fff;
+    --calculator-label-color: #fff;
+    --calculator-number-color: #fff;
+    --calculator-border-color: #fff;
+    --calculator-bcc: #121212;
 }
 
 html[data-theme='light'] {
@@ -105,7 +111,7 @@ html[data-theme='light'] {
     --project-button-gitlink-bg-color: transparent;
     --project-button-gitlink-border-color: #121212;
     --project-gallery-bg-color: #fff;
-    --project-gallery-box-shadow-color: rgba(212, 212, 212, 0.2);
+    --project-gallery-box-shadow-color: rgba(212, 212, 212, 0.5);
     --project-navlink-color: #121212;
 
     --contact-gradient-start: #AA367C;
@@ -129,6 +135,12 @@ html[data-theme='light'] {
     --footer-placeholder-color: #fff;
 
     --error: tomato;
+
+    --calculator-title-color: #121212;
+    --calculator-label-color: #121212;
+    --calculator-number-color: #121212;
+    --calculator-border-color: #5C62EC;
+    --calculator-bcc: #5C62EC;
 }
 
 @font-face {
@@ -166,7 +178,7 @@ body {
     background-color: var(--secondary-color) !important;
     color: var(--primary-color) !important;
     font-family: 'Centra', sans-serif !important;
-    transition: background-color 1000ms linear;
+    transition: background-color 800ms linear;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -724,7 +736,7 @@ nav.navbar .navbar-toggler-icon.open span:nth-child(3) {
 
 .nav-link#projects-tabs-tab-second {
     border-top: 2px solid var(--project-tab-color);
-    border-bottom: 2px solid var(--project-tab-color);
+    border-bottom: 2px solid; 
 }
 
 .nav-link#projects-tabs-tab-third {
@@ -858,7 +870,7 @@ nav.navbar .navbar-toggler-icon.open span:nth-child(3) {
 
 @media (max-width: 425px) {
     .singleProject {
-        margin: 250px 0 0 0;
+        margin: 200px 0 0 0;
     }
 }
 
@@ -906,11 +918,13 @@ nav.navbar .navbar-toggler-icon.open span:nth-child(3) {
 
 .gallery img {
     max-width: 800px;
+    height: 500px;
     object-fit: contain;
 }
 
 .project-skills {
     font-size: 24px;
+    color: #5C62EC;
 }
 
 .project-details .button-GitLink {
@@ -1149,3 +1163,51 @@ nav.navbar .navbar-toggler-icon.open span:nth-child(3) {
 .modal_body {
     color: var(--error);
 }
+
+/************ Calculator Css ************/
+.calculator {
+    margin-top: 200px;
+}
+
+.calculator h2 {
+    font-size: 45px;
+    margin-bottom: 20px;
+    text-align: center;
+    color: var(--calculator-title-color);
+}
+
+.calculator form {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.calculator .form-calculator {
+    font-size: 18px;
+}
+
+.calculator label {
+    color: var(--calculator-label-color);
+}
+
+.slider-container {
+    position: relative;
+}
+
+.slider-progress {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.form-calculator p {
+    color: var(--calculator-number-color);
+}
+
+.result {
+    margin-top: 20px;
+    padding: 16px;
+    border: 1px solid var(--calculator-border-color);
+    border-radius: 8px;
+    background-color: var(--calculator-bcc);
+}   
