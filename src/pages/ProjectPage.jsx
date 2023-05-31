@@ -3,8 +3,8 @@ import { Container, Row } from 'react-bootstrap';
 import { NavLink, useParams } from 'react-router-dom';
 import PROJECTS from '../data/projects';
 
-import Carousel from 'react-multi-carousel';
-import 'react-multi-carousel/lib/styles.css';
+import "react-responsive-carousel/lib/styles/carousel.min.css";
+import { Carousel } from "react-responsive-carousel";
 import { ArrowRightCircle } from 'react-bootstrap-icons';
 
 const ProjectPage = () => {
@@ -22,26 +22,6 @@ const ProjectPage = () => {
       // Если проект не найден, можно показать сообщение или перенаправить пользователя
       return <p>Проект не найден</p>;
     }
-  
-    const responsive = {
-        superLargeDesktop: {
-          // the naming can be any, depends on you.
-          breakpoint: { max: 4000, min: 3000 },
-          items: 1
-        },
-        desktop: {
-          breakpoint: { max: 3000, min: 1024 },
-          items: 1
-        },
-        tablet: {
-          breakpoint: { max: 1024, min: 464 },
-          items: 1
-        },
-        mobile: {
-          breakpoint: { max: 464, min: 0 },
-          items: 1
-        }
-    };
 
   return (
     <>
@@ -51,11 +31,25 @@ const ProjectPage = () => {
         <div className="project-details">
           <h2>{project.title}</h2>
           <div className="gallery">
-            <Carousel responsive={responsive} infinite className='img-slider'>
+            <Carousel
+              infiniteLoop
+              showThumbs={false}
+              autoPlay
+              interval={3000}
+              className="img-slider"
+            >
+              <div>
                 <img src={project.photo} alt={project.title} />
+              </div>
+              <div>
                 <img src={project.photo2} alt={project.title} />
+              </div>
+              <div>
                 <img src={project.photo3} alt={project.title} />
+              </div>
+              <div>
                 <img src={project.photo4} alt={project.title} />
+              </div>
             </Carousel>
           </div>
             <Row>

@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 import SKILLS from "../data/skills";
 import { Col, Container, Row } from 'react-bootstrap';
@@ -8,6 +8,9 @@ import  Banner  from "../components/banner/Banner";
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 import { ContactForm } from "../components/contactForm/ContactForm";
+
+import 'animate.css'
+import TrackVisibility from 'react-on-screen';
 
 const HomePage = () => {
 
@@ -36,6 +39,10 @@ const HomePage = () => {
     return (
         <>
 
+          <TrackVisibility>
+          {({ isVisible }) => 
+          <div className={isVisible ? "animate__animated animate__fadeIn" : ""}>
+
             <Banner />
 
             <section className="skill">
@@ -57,6 +64,9 @@ const HomePage = () => {
             </section>
 
             <ContactForm />
+
+          </div>}
+          </TrackVisibility>
 
         </>
     )

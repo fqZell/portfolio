@@ -922,6 +922,17 @@ nav.navbar .navbar-toggler-icon.open span:nth-child(3) {
     object-fit: contain;
 }
 
+.carousel .carousel-status {
+    color: #5C62EC;
+    text-shadow: none;
+    font-size: 14px;
+}
+
+.carousel .control-dots .dot {
+    box-shadow: none;
+    background: #5C62EC;
+}
+
 .project-skills {
     font-size: 24px;
     color: #5C62EC;

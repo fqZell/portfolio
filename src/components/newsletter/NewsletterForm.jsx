@@ -48,7 +48,7 @@ export const NewsletterForm = ({ status, message, onValidated }) => {
           <Row>
             <Col lg={12} md={6} xl={5}>
               <h3>Подпишитесь на нашу рассылку<br></br> & Никогда не пропускайте последние обновления</h3>
-              {status === 'sending' && <Alert>Sending...</Alert>}
+              {status === 'sending' && <Alert>Отпрвление...</Alert>}
               {status === 'success' && <Alert variant="success">{message}</Alert>}
               {status === 'error' && <Alert variant="danger">{message}</Alert>}
             </Col>

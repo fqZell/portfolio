@@ -41,9 +41,9 @@ const Header = () => {
         <>
         <Navbar expand="md" className={scrolled ? "scrolled" : ""}>
             <Container>
-                <Navbar.Brand href="/">
+                <NavLink to={'/'}><Navbar.Brand>
                 <img src={logo} alt="Logo" />
-                </Navbar.Brand>
+                </Navbar.Brand></NavLink>
                 <Navbar.Toggle
                     style={{ border: 'inherit' }}
                     aria-controls="basic-navbar-nav"
