@@ -4,7 +4,6 @@ import pre3 from '../assets/img/projects/pre3.png';
 import pre4 from '../assets/img/projects/pre4.png';
 import pre5 from '../assets/img/projects/pre5.png';
 import pre6 from '../assets/img/projects/pre6.png';
-import pre7 from '../assets/img/projects/pre7.png';
 import pre8 from '../assets/img/projects/pre8.png';
 import pre9 from '../assets/img/projects/pre9.png';
 
