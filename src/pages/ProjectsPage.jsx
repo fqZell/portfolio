@@ -1,11 +1,11 @@
 import { Container, Row, Col, Tab, Nav } from "react-bootstrap";
-import PROJECTS from "../data/projects";
+// import PROJECTS from "../data/projects";
 import colorSharp2 from "../assets/img/projects/color-sharp2.png";
-import { useState } from "react";
+// import { useState } from "react";
 import Project from "../components/project/Project";
 
 const ProjectsPage = () => {
-  const [projects, setProjects] = useState(PROJECTS);
+  // const [projects, setProjects] = useState(PROJECTS);
 
   return (
     <>
@@ -46,29 +46,31 @@ const ProjectsPage = () => {
                 <Tab.Content id="slideInUp" className="project-card">
                   <Tab.Pane eventKey="first">
                     <Row>
-                      {projects
+                      {/* {projects
                         .filter((project) => project.id >= 4 && project.id <= 7)
-                        .map((project) => (
-                          <Project key={project.id} project={project} />
-                        ))}
+                        .map((project) => ( */}
+                          <Project 
+                          // project={project} 
+                          />
+                        {/* // ))} */}
                     </Row>
                   </Tab.Pane>
                   <Tab.Pane eventKey="second">
                     <Row>
-                      {projects
+                      {/* {projects
                         .filter((project) => project.id >= 1 && project.id <= 3)
                         .map((project) => (
                           <Project key={project.id} project={project} />
-                        ))}
+                        ))} */}
                     </Row>
                   </Tab.Pane>
                   <Tab.Pane eventKey="third">
                     <Row>
-                      {projects
+                      {/* {projects
                         .filter((project) => project.id >= 8 && project.id <= 9)
                         .map((project) => (
                           <Project key={project.id} project={project} />
-                        ))}
+                        ))} */}
                     </Row>
                   </Tab.Pane>
                 </Tab.Content>
