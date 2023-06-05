@@ -50,6 +50,10 @@ export const ContactForm = () => {
       errors.push("Введите действительный адрес электронной почты.");
     }
 
+    if (!formDetails.phone.match(/^[+0-9]+$/) || formDetails.phone.length < 11 || formDetails.phone.length > 13) {
+      errors.push("Поле с телефоном должно содержать только цифры и знак '+', так же, должно содержать 11 символов");
+    }    
+
     if (formDetails.message.length < 5 || formDetails.message.length > 100) {
       errors.push("Сообщение должно содержать от 5 до 100 символов.");
     }

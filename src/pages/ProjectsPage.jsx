@@ -1,11 +1,34 @@
 import { Container, Row, Col, Tab, Nav } from "react-bootstrap";
 // import PROJECTS from "../data/projects";
 import colorSharp2 from "../assets/img/projects/color-sharp2.png";
-// import { useState } from "react";
 import Project from "../components/project/Project";
+import { useState } from "react";
+import axios from "axios";
+import { useEffect } from "react";
+import { NavLink } from "react-router-dom";
+
+const cats = [
+  { name: 'Все' },
+  { name: 'React' },
+  { name: 'PHP' },
+  { name: 'JS' },
+  { name: 'Laravel' },  
+]
 
 const ProjectsPage = () => {
   // const [projects, setProjects] = useState(PROJECTS);
+  const [projects, setProjects] = useState([]);
+  const [categoryId, setcategoryId] = useState(0);
+
+  useEffect(() => {
+    axios.get(`https://646bafb47d3c1cae4ce42749.mockapi.io/Projects?${categoryId ? `categories=${categoryId}` : ''}`)
+      .then(response => {
+        setProjects(response.data);
+      })
+      .catch(error => {
+        console.error(error);
+      });
+  }, [categoryId]);
 
   return (
     <>
@@ -21,8 +44,14 @@ const ProjectsPage = () => {
                 мои навыки в HTML, CSS, JavaScript, React и других современных
                 инструментах разработки.
               </p>
+              {cats.map((obj, i) => (
+                  <li onClick={() => setcategoryId(i)} className={categoryId === i ? 'active' : ''} key={obj.name}>
+                    {obj.name}
+                  </li>
+              ))}
               <Tab.Container id="projects-tabs" defaultActiveKey="first">
-                <Nav
+
+                {/* <Nav
                   variant="pills"
                   className="nav-pills mb-5 justify-content-center align-items-center"
                   id="pills-tab"
@@ -42,37 +71,36 @@ const ProjectsPage = () => {
                     Вкладка 3
                     </Nav.Link>
                   </Nav.Item>
-                </Nav>
+                </Nav> */}
                 <Tab.Content id="slideInUp" className="project-card">
                   <Tab.Pane eventKey="first">
                     <Row>
                       {/* {projects
                         .filter((project) => project.id >= 4 && project.id <= 7)
                         .map((project) => ( */}
-                          <Project 
-                          // project={project} 
-                          />
+                        {projects.map(project => (
+                          <Col key={project.id} size={12} sm={6} md={4}>
+                          <div className="proj-imgbx">
+                            <img src={project.preview} alt={project.title} />
+                            <div className="proj-txtx">
+                              <NavLink to={`/project/${project.id}`}>
+                                <h4>{project.title}</h4>
+                              </NavLink>
+                            </div>
+                          </div>
+                        </Col>
+                        ))}
                         {/* // ))} */}
                     </Row>
                   </Tab.Pane>
-                  <Tab.Pane eventKey="second">
+                  {/* <Tab.Pane eventKey="second">
                     <Row>
-                      {/* {projects
-                        .filter((project) => project.id >= 1 && project.id <= 3)
-                        .map((project) => (
-                          <Project key={project.id} project={project} />
-                        ))} */}
                     </Row>
                   </Tab.Pane>
                   <Tab.Pane eventKey="third">
                     <Row>
-                      {/* {projects
-                        .filter((project) => project.id >= 8 && project.id <= 9)
-                        .map((project) => (
-                          <Project key={project.id} project={project} />
-                        ))} */}
                     </Row>
-                  </Tab.Pane>
+                  </Tab.Pane> */}
                 </Tab.Content>
               </Tab.Container>
             </Col> 
