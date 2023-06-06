@@ -1,7 +1,7 @@
 import { Container, Row, Col, Tab, Nav } from "react-bootstrap";
 // import PROJECTS from "../data/projects";
 import colorSharp2 from "../assets/img/projects/color-sharp2.png";
-import Project from "../components/project/Project";
+// import Project from "../components/project/Project";
 import { useState } from "react";
 import axios from "axios";
 import { useEffect } from "react";
