@@ -3,7 +3,7 @@ import Header from "../components/header/Header";
 import { Outlet } from "react-router-dom";
 import Footer from "../components/footer/Footer";
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { ContactForm } from "../components/contactForm/ContactForm";
+import ContactForm from "../components/contactForm/ContactForm";
 import { useTheme } from "../hooks/use-theme";
 
 const Root = () => {
@@ -20,6 +20,8 @@ const Root = () => {
                 <main>
                     <Outlet />
                 </main>
+
+                <ContactForm />
 
                 <footer>
                     <Footer />

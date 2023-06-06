@@ -19,15 +19,17 @@ const ProjectsPage = () => {
   // const [projects, setProjects] = useState(PROJECTS);
   const [projects, setProjects] = useState([]);
   const [categoryId, setcategoryId] = useState(0);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
+    setIsLoading(true);
     axios.get(`https://646bafb47d3c1cae4ce42749.mockapi.io/Projects?${categoryId ? `categories=${categoryId}` : ''}`)
       .then(response => {
         setProjects(response.data);
       })
       .catch(error => {
         console.error(error);
-      });
+      }).finally(() => setIsLoading(false))
   }, [categoryId]);
 
   return (
@@ -44,11 +46,13 @@ const ProjectsPage = () => {
                 мои навыки в HTML, CSS, JavaScript, React и других современных
                 инструментах разработки.
               </p>
-              {cats.map((obj, i) => (
-                  <li onClick={() => setcategoryId(i)} className={categoryId === i ? 'active' : ''} key={obj.name}>
-                    {obj.name}
-                  </li>
-              ))}
+              <div className="categories">
+                {cats.map((obj, i) => (
+                    <li onClick={() => setcategoryId(i)} className={categoryId === i ? 'active' : ''} key={obj.name}>
+                      {obj.name}
+                    </li>
+                ))}
+              </div>
               <Tab.Container id="projects-tabs" defaultActiveKey="first">
 
                 {/* <Nav
@@ -78,7 +82,9 @@ const ProjectsPage = () => {
                       {/* {projects
                         .filter((project) => project.id >= 4 && project.id <= 7)
                         .map((project) => ( */}
-                        {projects.map(project => (
+                        {isLoading ? (<h2>Идет загрузка...</h2>) 
+                        : 
+                        (projects.map(project => (
                           <Col key={project.id} size={12} sm={6} md={4}>
                           <div className="proj-imgbx">
                             <img src={project.preview} alt={project.title} />
@@ -89,7 +95,7 @@ const ProjectsPage = () => {
                             </div>
                           </div>
                         </Col>
-                        ))}
+                        )))}
                         {/* // ))} */}
                     </Row>
                   </Tab.Pane>

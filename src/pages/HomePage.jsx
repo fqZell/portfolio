@@ -7,7 +7,7 @@ import  Banner  from "../components/banner/Banner";
 
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
-import { ContactForm } from "../components/contactForm/ContactForm";
+// import { ContactForm } from "../components/contactForm/ContactForm";
 
 import 'animate.css'
 import TrackVisibility from 'react-on-screen';
@@ -63,7 +63,7 @@ const HomePage = () => {
                 </Container>
             </section>
 
-            <ContactForm />
+            {/* <ContactForm /> */}
 
           </div>}
           </TrackVisibility>
