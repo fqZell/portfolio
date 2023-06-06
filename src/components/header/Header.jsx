@@ -69,6 +69,10 @@ const Header = () => {
                     onClick={() => onUpdateActiveLink('calculator')}>
                         Калькулятор
                     </NavLink>
+                    <NavLink to={"/addProject"} className={activeLink === 'addProject' ? 'active navbar-link' : 'navbar-link'} 
+                    onClick={() => onUpdateActiveLink('addProject')}>
+                        Добавить проект
+                    </NavLink>
                 </Nav>
                 <span className="navbar-text">
                 <div className="social-icon">
