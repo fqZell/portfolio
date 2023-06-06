@@ -4,6 +4,7 @@ import HomePage from "../pages/HomePage";
 import ProjectsPage from "../pages/ProjectsPage";
 import ProjectPage from "../pages/ProjectPage";
 import CalculatorPage from "../pages/CalculatorPage";
+import AddProject from "../components/addProject/AddProject";
 
 const router = createBrowserRouter([
     {
@@ -25,6 +26,10 @@ const router = createBrowserRouter([
             {
                 path: "/calculator",
                 element: <CalculatorPage />
+            },
+            {
+                path: "/addProject",
+                element: <AddProject />
             },
         ]
     }

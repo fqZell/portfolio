@@ -1259,5 +1259,9 @@ nav.navbar .navbar-toggler-icon.open span:nth-child(3) {
 }
 
 .calculator .calculator-warning {
-    font-size: 12px;
+    font-size: 14px; 
+}
+
+.add {
+    margin-top: 500px;
 }
