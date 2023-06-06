@@ -3,7 +3,7 @@ import { Container, Row, Col, Modal, Button } from "react-bootstrap";
 import contactImg from "../../assets/img/contact/contact-img.svg";
 import emailjs from '@emailjs/browser';
 
-export const ContactForm = () => {
+const ContactForm = () => {
   const form = useRef();
 
   const formInitialDetails = {
@@ -192,3 +192,5 @@ export const ContactForm = () => {
     </section>
   );
 };
+
+export default ContactForm;
