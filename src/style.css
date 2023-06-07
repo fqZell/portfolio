@@ -71,6 +71,10 @@ html[data-theme='dark'] {
     --calculator-number-color: #fff;
     --calculator-border-color: #fff;
     --calculator-bcc: #121212;
+
+    --add-bcc: #121212;
+    --add-input-bcc: #1f1f1f;
+    --add-input-color: #ffffff;
 }
 
 html[data-theme='light'] {
@@ -145,6 +149,10 @@ html[data-theme='light'] {
     --calculator-number-color: #121212;
     --calculator-border-color: #5C62EC;
     --calculator-bcc: #5C62EC;
+
+    --add-bcc: #fff;
+    --add-input-bcc: #f1f1f1;
+    --add-input-color: #121212;
 }
 
 @font-face {
@@ -1262,6 +1270,48 @@ nav.navbar .navbar-toggler-icon.open span:nth-child(3) {
     font-size: 14px; 
 }
 
+/************ addProject Css ************/
 .add {
-    margin-top: 500px;
+    margin: 200px 0 100px 0;
+    padding: 20px;
+    background-color: var(--add-bcc);
+    -webkit-box-shadow: 0px 5px 10px 2px rgba(39, 39, 39, 0.2);
+    -moz-box-shadow: 0px 5px 10px 2px rgba(44, 44, 44, 0.2);
+    box-shadow: 0px 5px 10px 2px rgba(51, 51, 51, 0.2);
+    color: #fff;
+    border-radius: 16px;
+}
+
+.add form {
+    display: flex;
+    flex-direction: column;
+}
+
+.add form input,
+.add form button {
+    margin-bottom: 10px;
+    background-color: var(--add-input-bcc);
+    color: var(--add-input-color);
+    border: none;
+    padding: 10px;
+}
+
+.add form button {
+    width: 150px;
+    align-self: flex-start;
+    background-color: #5C62EC;
+    color: #fff;
+}
+
+.add form button:hover {
+    background-color: #0056b3;
+}
+
+.add form input::placeholder {
+    color: #757575;
+}
+
+.add form input:focus,
+.add form button:focus {
+    outline: none;
 }
