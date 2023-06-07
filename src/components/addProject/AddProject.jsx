@@ -4,6 +4,9 @@ import { Container } from "react-bootstrap";
 
 const AddProject = () => {
   const [projectName, setProjectName] = useState("");
+  const [projectSkills, setProjectSkills] = useState("");
+  const [projectPreview, setProjectPreview] = useState("");
+  const [projectGitHubLink, setProjectGitHubLink] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -11,6 +14,9 @@ const AddProject = () => {
     axios
       .post("https://646bafb47d3c1cae4ce42749.mockapi.io/Projects", {
         title: projectName,
+        skills: projectSkills,
+        preview: projectPreview,
+        githubLink: projectGitHubLink,
       })
       .then((response) => {
         console.log("Проект успешно добавлен:", response.data);
@@ -21,6 +27,9 @@ const AddProject = () => {
       });
 
     setProjectName(""); // Сброс поля ввода
+    setProjectSkills(""); // Сброс поля ввода
+    setProjectPreview(""); // Сброс поля ввода
+    setProjectGitHubLink("");
   };
 
   return (
@@ -34,6 +43,24 @@ const AddProject = () => {
           value={projectName}
           onChange={(e) => setProjectName(e.target.value)}
           placeholder="Название проекта"
+        />
+        <input
+          type="text"
+          value={projectSkills}
+          onChange={(e) => setProjectSkills(e.target.value)}
+          placeholder="Использованные навыки"
+        />
+        <input
+          type="text"
+          value={projectPreview}
+          onChange={(e) => setProjectPreview(e.target.value)}
+          placeholder="Превью"
+        />
+        <input
+          type="text"
+          value={projectGitHubLink}
+          onChange={(e) => setProjectGitHubLink(e.target.value)}
+          placeholder="Ссылка на GitHub репозиторий"
         />
         <button type="submit">Добавить проект</button>
       </form>

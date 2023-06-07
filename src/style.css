@@ -197,7 +197,7 @@ p, a, li, button, ul {
     padding: 0;
     line-height: normal;
     text-decoration: none;
-    transition: color 1000ms linear;
+    transition: color 500ms linear;
     list-style: none;
 }
 
