@@ -4,7 +4,7 @@ import { GoogleAuthProvider } from "firebase/auth";
 const API_KEY = import.meta.env.VITE_API_KEY; 
 
 const firebaseConfig = {
-  apiKey: API_KEY,
+  apiKey: "AIzaSyC1DULNiRTBQESpdnOKvcKezAHIH7hp96I",
   authDomain: "portfolioauth-804d3.firebaseapp.com",
   projectId: "portfolioauth-804d3",
   storageBucket: "portfolioauth-804d3.appspot.com",
