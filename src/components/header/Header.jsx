@@ -15,7 +15,7 @@ import firebase from 'firebase/compat/app';
 
 const Header = () => {
     firebase.initializeApp({
-        apiKey: API_KEY,
+        apiKey: "AIzaSyC1DULNiRTBQESpdnOKvcKezAHIH7hp96I",
         authDomain: "portfolioauth-804d3.firebaseapp.com",
         projectId: "portfolioauth-804d3",
         storageBucket: "portfolioauth-804d3.appspot.com",
