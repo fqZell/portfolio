@@ -1,5 +1,5 @@
 import NewsletterSubscribe from "../newsletter/NewsletterSubscribe";
-import { faTelegram, faVk, faInstagram } from '@fortawesome/free-brands-svg-icons';
+import { faTelegram, faVk, faGithub } from '@fortawesome/free-brands-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Container, Row } from "react-bootstrap";
 
@@ -13,7 +13,7 @@ const Footer = () => {
                 <div className="social-icon">
                     <a href="#"><FontAwesomeIcon className="icon" icon={faTelegram} size='xl' /></a>
                     <a href="#"><FontAwesomeIcon className="icon" icon={faVk} size='xl' /></a>
-                    <a href="#"><FontAwesomeIcon className="icon" icon={faInstagram} size='xl' /></a>
+                    <a href="#"><FontAwesomeIcon className="icon" icon={faGithub} size='xl' /></a>
                 </div>
                 <p>© SALAHIEV</p>
             </Row>

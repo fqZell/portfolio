@@ -13,6 +13,7 @@ const AddProjectButton = () => {
     return (
       <NavLink
         to={"/addProject"}
+        className="button-Delete"
       >
         Добавить проект
       </NavLink>

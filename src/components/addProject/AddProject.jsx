@@ -1,31 +1,35 @@
-import { useState } from "react";
-import axios from "axios";
-import { Button, Container, Form } from "react-bootstrap";
+import { useState } from 'react';
+import axios from 'axios';
+import { Button, Container, Form, Modal } from 'react-bootstrap';
+import { useNavigate } from 'react-router-dom';
 
 const cats = [
   { name: 'React' },
   { name: 'PHP' },
   { name: 'JS' },
-  { name: 'Laravel' },  
-]
+  { name: 'Laravel' },
+];
 
 const AddProject = () => {
-  const [projectName, setProjectName] = useState("");
-  const [projectSkills, setProjectSkills] = useState("");
-  const [projectPreview, setProjectPreview] = useState("");
-  const [projectGitHubLink, setProjectGitHubLink] = useState("");
-  const [projectPhoto, setProjectPhoto] = useState("");
-  const [projectPhoto2, setProjectPhoto2] = useState("");
-  const [projectPhoto3, setProjectPhoto3] = useState("");
-  const [projectPhoto4, setProjectPhoto4] = useState("");
-  const [projectCats, setProjectCats] = useState("");
+  const [projectName, setProjectName] = useState('');
+  const [projectSkills, setProjectSkills] = useState('');
+  const [projectPreview, setProjectPreview] = useState('');
+  const [projectGitHubLink, setProjectGitHubLink] = useState('');
+  const [projectPhoto, setProjectPhoto] = useState('');
+  const [projectPhoto2, setProjectPhoto2] = useState('');
+  const [projectPhoto3, setProjectPhoto3] = useState('');
+  const [projectPhoto4, setProjectPhoto4] = useState('');
+  const [projectCats, setProjectCats] = useState('');
   const [categoryId, setCategoryId] = useState(0);
+  const [showModal, setShowModal] = useState(false); // Состояние модального окна
+
+  const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
     axios
-      .post("https://646bafb47d3c1cae4ce42749.mockapi.io/Projects", {
+      .post('https://646bafb47d3c1cae4ce42749.mockapi.io/Projects', {
         title: projectName,
         skills: projectSkills,
         preview: projectPreview,
@@ -37,118 +41,133 @@ const AddProject = () => {
         categories: projectCats,
       })
       .then((response) => {
-        console.log("Проект успешно добавлен:", response.data);
+        console.log('Проект успешно добавлен:', response.data);
         // Обновление списка проектов или другие действия
+        setShowModal(true); // Открытие модального окна при успешном добавлении проекта
+        setTimeout(() => {
+          setShowModal(false); // Закрытие модального окна через 3 секунды
+          navigate('/projects'); // Перенаправление на страницу со списком проектов
+        }, 3000);
       })
       .catch((error) => {
-        console.error("Ошибка при добавлении проекта:", error);
+        console.error('Ошибка при добавлении проекта:', error);
       });
 
-    setProjectName(""); // Сброс поля ввода
-    setProjectSkills(""); // Сброс поля ввода
-    setProjectPreview(""); // Сброс поля ввода
-    setProjectGitHubLink("");
-    setProjectPhoto("");
-    setProjectPhoto2("");
-    setProjectPhoto3("");
-    setProjectPhoto4("");
-    setProjectCats("");
+    setProjectName(''); // Сброс поля ввода
+    setProjectSkills(''); // Сброс поля ввода
+    setProjectPreview(''); // Сброс поля ввода
+    setProjectGitHubLink('');
+    setProjectPhoto('');
+    setProjectPhoto2('');
+    setProjectPhoto3('');
+    setProjectPhoto4('');
+    setProjectCats('');
   };
 
   return (
     <>
-    <Container>
-      <div className="add">
-        <Form onSubmit={handleSubmit}>
-          <Form.Group controlId="projectName">
-            <Form.Control
-              type="text"
-              value={projectName}
-              onChange={(e) => setProjectName(e.target.value)}
-              placeholder="Название проекта"
-            />
-          </Form.Group>
+      <Container>
+        <div className="add">
+          <Form onSubmit={handleSubmit}>
+            <Form.Group controlId="projectName">
+              <Form.Control
+                type="text"
+                value={projectName}
+                onChange={(e) => setProjectName(e.target.value)}
+                placeholder="Название проекта"
+              />
+            </Form.Group>
 
-          <Form.Group controlId="projectSkills">
-            <Form.Control
-              type="text"
-              value={projectSkills}
-              onChange={(e) => setProjectSkills(e.target.value)}
-              placeholder="Использованные навыки"
-            />
-          </Form.Group>
+            <Form.Group controlId="projectSkills">
+              <Form.Control
+                type="text"
+                value={projectSkills}
+                onChange={(e) => setProjectSkills(e.target.value)}
+                placeholder="Использованные навыки"
+              />
+            </Form.Group>
 
-          <Form.Group controlId="projectPreview">
-            <Form.Control
-              type="text"
-              value={projectPreview}
-              onChange={(e) => setProjectPreview(e.target.value)}
-              placeholder="Превью"
-            />
-          </Form.Group>
+            <Form.Group controlId="projectPreview">
+              <Form.Control
+                type="text"
+                value={projectPreview}
+                onChange={(e) => setProjectPreview(e.target.value)}
+                placeholder="Превью"
+              />
+            </Form.Group>
 
-          <Form.Group controlId="projectGitHubLink">
-            <Form.Control
-              type="text"
-              value={projectGitHubLink}
-              onChange={(e) => setProjectGitHubLink(e.target.value)}
-              placeholder="Ссылка на GitHub репозиторий"
-            />
-          </Form.Group>
+            <Form.Group controlId="projectGitHubLink">
+              <Form.Control
+                type="text"
+                value={projectGitHubLink}
+                onChange={(e) => setProjectGitHubLink(e.target.value)}
+                placeholder="Ссылка на GitHub репозиторий"
+              />
+            </Form.Group>
 
-          <Form.Group controlId="projectPhoto">
-            <Form.Control
-              type="text"
-              value={projectPhoto}
-              onChange={(e) => setProjectPhoto(e.target.value)}
-              placeholder="Добавить первую фотографию"
-            />
-          </Form.Group>
+            <Form.Group controlId="projectPhoto">
+              <Form.Control
+                type="text"
+                value={projectPhoto}
+                onChange={(e) => setProjectPhoto(e.target.value)}
+                placeholder="Добавить первую фотографию"
+              />
+            </Form.Group>
 
-          <Form.Group controlId="projectPhoto2">
-            <Form.Control
-              type="text"
-              value={projectPhoto2}
-              onChange={(e) => setProjectPhoto2(e.target.value)}
-              placeholder="Добавить вторую фотографию"
-            />
-          </Form.Group>
+            <Form.Group controlId="projectPhoto2">
+              <Form.Control
+                type="text"
+                value={projectPhoto2}
+                onChange={(e) => setProjectPhoto2(e.target.value)}
+                placeholder="Добавить вторую фотографию"
+              />
+            </Form.Group>
 
-          <Form.Group controlId="projectPhoto3">
-            <Form.Control
-              type="text"
-              value={projectPhoto3}
-              onChange={(e) => setProjectPhoto3(e.target.value)}
-              placeholder="Добавить третью фотографию"
-            />
-          </Form.Group>
+            <Form.Group controlId="projectPhoto3">
+              <Form.Control
+                type="text"
+                value={projectPhoto3}
+                onChange={(e) => setProjectPhoto3(e.target.value)}
+                placeholder="Добавить третью фотографию"
+              />
+            </Form.Group>
 
-          <Form.Group controlId="projectPhoto4">
-            <Form.Control
-              type="text"
-              value={projectPhoto4}
-              onChange={(e) => setProjectPhoto4(e.target.value)}
-              placeholder="Добавить четвертую фотографию"
-            />
-          </Form.Group>
+            <Form.Group controlId="projectPhoto4">
+              <Form.Control
+                type="text"
+                value={projectPhoto4}
+                onChange={(e) => setProjectPhoto4(e.target.value)}
+                placeholder="Добавить четвертую фотографию"
+              />
+            </Form.Group>
 
-          <Form.Group controlId="projectCats">
-            <Form.Control
-              type="number"
-              min="1"
-              max="4"
-              value={projectCats}
-              onChange={(e) => setProjectCats(e.target.value)}
-              placeholder="Выберите категорию (от 1 до 4)"
-            />
-          </Form.Group>
+            <Form.Group controlId="projectCats">
+              <Form.Control
+                type="number"
+                min="1"
+                max="4"
+                value={projectCats}
+                onChange={(e) => setProjectCats(e.target.value)}
+                placeholder="Выберите категорию (от 1 до 4)"
+              />
+            </Form.Group>
 
-          <Button variant="primary" type="submit">
-            Добавить проект
-          </Button>
-        </Form>
-      </div>
-    </Container>
+            <Button variant="primary" type="submit">
+              Добавить проект
+            </Button>
+          </Form>
+        </div>
+      </Container>
+
+      {/* Модальное окно */}
+      <Modal show={showModal} onHide={() => setShowModal(false)} centered>
+        <Modal.Header closeButton>
+          <Modal.Title className="modal_title">Проект добавлен</Modal.Title>
+        </Modal.Header>
+        <Modal.Body className="modal_body">
+          Ваш проект успешно добавлен. Вы будете перенаправлены на страницу со списком проектов.
+        </Modal.Body>
+      </Modal>
     </>
   );
 };

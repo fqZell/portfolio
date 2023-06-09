@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { Navbar, Nav, Container } from "react-bootstrap";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faTelegram, faVk, faInstagram } from '@fortawesome/free-brands-svg-icons';
+import { faGithub, faTelegram, faVk } from '@fortawesome/free-brands-svg-icons';
 import logo from "../../assets/img/logo/logo.svg";
 import { useTheme } from "../../hooks/use-theme";
 import { faMoon, faSun } from "@fortawesome/free-solid-svg-icons";
@@ -125,7 +125,7 @@ const Header = () => {
                                     className={activeLink === 'calculator' ? 'active navbar-link' : 'navbar-link'}
                                     onClick={() => onUpdateActiveLink('calculator')}
                                 >
-                                    <button className='button_exit' onClick={handleSignOut}>Выйти</button>
+                                    <button className='button_exit' onClick={handleSignOut}>Выход</button>
                                 </NavLink>
                                 </>
                             ) : (
@@ -144,7 +144,7 @@ const Header = () => {
                             <div className="social-icon">
                                 <a href="#"><FontAwesomeIcon className="icon" icon={faTelegram} size='xl' /></a>
                                 <a href="#"><FontAwesomeIcon className="icon" icon={faVk} size='xl' /></a>
-                                <a href="#"><FontAwesomeIcon className="icon" icon={faInstagram} size='xl' /></a>
+                                <a href="#"><FontAwesomeIcon className="icon" icon={faGithub} size='xl' /></a>
                             </div>
                             <FontAwesomeIcon className="iconSun" icon={faSun} size='xl'></FontAwesomeIcon>
                             <div className="theme-switcher">
