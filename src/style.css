@@ -15,6 +15,7 @@ html[data-theme='dark'] {
     --toggler-icon-color: #fff;
     --toggler-icon-span-color: #fff;
     --navbar-icon-color: #fff;
+    --header-button-color: #fff;
 
     --banner-bg-color: linear-gradient(90.21deg, rgba(170, 54, 124, 0.5) -5.91%, rgba(74, 47, 189, 0.5) 111.58%);
     --banner-tagline-border-color: rgba(255, 255, 255, 0.5);
@@ -75,6 +76,9 @@ html[data-theme='dark'] {
     --add-bcc: #121212;
     --add-input-bcc: #1f1f1f;
     --add-input-color: #ffffff;
+    --sign--h2-color: #fff;
+    --sign-label-color: #fff;
+    --sign-p-color: #fff;
 }
 
 html[data-theme='light'] {
@@ -93,6 +97,7 @@ html[data-theme='light'] {
     --toggler-icon-color: #fff;
     --toggler-icon-span-color: #5C62EC;
     --navbar-icon-color: #fff;
+    --header-button-color: #5C62EC;
 
     --banner-bg-color: linear-gradient(90.21deg, rgba(170, 54, 124, 0.5) -5.91%, rgba(74, 47, 189, 0.5) 111.58%);
     --banner-tagline-border-color: rgba(255, 255, 255, 0.5);
@@ -153,6 +158,9 @@ html[data-theme='light'] {
     --add-bcc: #fff;
     --add-input-bcc: #f1f1f1;
     --add-input-color: #121212;
+    --sign--h2-color: #121212;
+    --sign-label-color: #121212;
+    --sign-p-color: #121212;
 }
 
 @font-face {
@@ -268,7 +276,7 @@ nav.navbar .navbar-nav .navbar-link {
     color: var(--navbar-primary-color) !important;
     letter-spacing: 0.8px;
     padding: 0 25px;
-    font-size: 18px;
+    font-size: 16px;
     opacity: var(--navbar-link-opacity);
 }
 
@@ -450,7 +458,7 @@ nav.navbar .navbar-toggler-icon.open span:nth-child(3) {
         width: 93%;
     }
     nav.navbar {
-        padding: 10px 0;
+        padding: 14px 0;
     }
 
     nav.navbar a.navbar-brand {
@@ -519,6 +527,10 @@ nav.navbar .navbar-toggler-icon.open span:nth-child(3) {
 .iconSun {
     color: #5C62EC;
     margin: 0 10px;
+}
+
+.button_exit {
+    color: var(--header-button-color);
 }
 
 /************ Banner Css ************/
@@ -725,6 +737,9 @@ nav.navbar .navbar-toggler-icon.open span:nth-child(3) {
 }
 
 @media (max-width: 768px) {
+    .project {
+        padding: 250px 0 0 0;
+    }
     .project .categories {
         justify-content: center;
         align-items: center;
@@ -914,7 +929,13 @@ nav.navbar .navbar-toggler-icon.open span:nth-child(3) {
 
 /************ Single Projects Css ************/
 .singleProject {
-    margin-top: 190px;
+    padding: 190px 0 0 0;
+}
+
+@media (max-width: 768px) {
+    .singleProject {
+        padding: 250px 0 0 0;
+    }
 }
 
 .singleProject .button-NavLink {
@@ -1193,6 +1214,8 @@ nav.navbar .navbar-toggler-icon.open span:nth-child(3) {
         margin-top: 10px;
         margin-left: 0;
         width: 100%;
+        font-size: 16px;
+        padding: 12px 0;
     }
 }
 .footer img {
@@ -1220,7 +1243,13 @@ nav.navbar .navbar-toggler-icon.open span:nth-child(3) {
 
 /************ Calculator Css ************/
 .calculator {
-    margin: 170px 0 100px 0;
+    padding: 170px 0 100px 0;
+}
+
+@media (max-width: 768px) {
+    .calculator {
+        padding: 250px 0 50px 0;
+    }
 }
 
 .calculator h2 {
@@ -1270,7 +1299,7 @@ nav.navbar .navbar-toggler-icon.open span:nth-child(3) {
     font-size: 14px; 
 }
 
-/************ addProject Css ************/
+/************ Form Css ************/
 .add {
     margin: 200px 0 100px 0;
     padding: 20px;
@@ -1282,9 +1311,15 @@ nav.navbar .navbar-toggler-icon.open span:nth-child(3) {
     border-radius: 16px;
 }
 
+.add h2 {
+    margin-bottom: 16px;
+    color: var(--sign--h2-color);
+}
+
 .add form {
     display: flex;
     flex-direction: column;
+    gap: 8px;
 }
 
 .add form input,
@@ -1296,11 +1331,16 @@ nav.navbar .navbar-toggler-icon.open span:nth-child(3) {
     padding: 10px;
 }
 
+.add form label {
+    color: var(--sign-label-color);
+}
+
 .add form button {
-    width: 150px;
+    width: 250px;
     align-self: flex-start;
     background-color: #5C62EC;
     color: #fff;
+    font-size: 18px;
 }
 
 .add form button:hover {
@@ -1314,4 +1354,9 @@ nav.navbar .navbar-toggler-icon.open span:nth-child(3) {
 .add form input:focus,
 .add form button:focus {
     outline: none;
+}
+
+.add form p {
+    color: var(--sign-p-color);
+    font-size: 18px;
 }

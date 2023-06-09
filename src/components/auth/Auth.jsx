@@ -1,36 +1,7 @@
-// import React from 'react'
-// import { useState } from 'react'
-// import { getAuth, signInWithPopup } from "firebase/auth"
-// import { app, googleAuthProvider } from "../../bd/firebase"
-// import { useEffect } from 'react'
-
-// const Auth = () => {
-//     const auth = getAuth(app);
-//     const [user, setUser] = useState(auth.currentUser);
-
-//     useEffect(() => {
-//         const unsub = auth.onAuthStateChanged((maybeUser) => {
-//             if (maybeUser != null ) {
-//                 return setUser(maybeUser);
-//             }
-
-//             signInWithPopup(auth, googleAuthProvider).then(credentials => 
-//                 setUser(credentials.user)
-//             ).catch((e) => console.error(e));
-//         });
-
-//         return unsub;
-//     }, [auth])
-
-//   return user != null ? <>{user.displayName}</> : <>Loading...</>;
-// }
-
-// export default Auth
-
 import React, { useState, useEffect } from 'react';
 import firebase from 'firebase/compat/app';
 import 'firebase/compat/auth';
-import { SignIn, SignUp } from './Sign';
+import SignUp from './SignUp';
 
 const Auth = () => {
   const [user, setUser] = useState(null);
@@ -68,8 +39,8 @@ const Auth = () => {
         </>
       ) : (
         <>
-          <SignIn />
           <SignUp />
+          Уже есть аккаунт? 
         </>
       )}
     </div>

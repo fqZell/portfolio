@@ -1,7 +1,7 @@
 import NewsletterSubscribe from "../newsletter/NewsletterSubscribe";
 import { faTelegram, faVk, faInstagram } from '@fortawesome/free-brands-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { Col, Container, Row } from "react-bootstrap";
+import { Container, Row } from "react-bootstrap";
 
 const Footer = () => {
     return (

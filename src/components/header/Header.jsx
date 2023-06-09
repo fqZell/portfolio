@@ -1,17 +1,14 @@
 import React from 'react';
 import { NavLink } from "react-router-dom";
 import { useState, useEffect } from "react";
-import { Navbar, Nav, Container, Button } from "react-bootstrap";
+import { Navbar, Nav, Container } from "react-bootstrap";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTelegram, faVk, faInstagram } from '@fortawesome/free-brands-svg-icons';
 import logo from "../../assets/img/logo/logo.svg";
 import { useTheme } from "../../hooks/use-theme";
-import { faMoon, faSun, faSignOutAlt } from "@fortawesome/free-solid-svg-icons";
-// import { getAuth, signOut } from "firebase/auth";
-// import { app } from "../auth/firebase";
-import Auth from '../auth/Auth';
-const API_KEY = import.meta.env.VITE_API_KEY; 
+import { faMoon, faSun } from "@fortawesome/free-solid-svg-icons";
 import firebase from 'firebase/compat/app';
+import AddProjectButton from '../addProject/AddProjectButton';
 
 const Header = () => {
     firebase.initializeApp({
@@ -26,35 +23,37 @@ const Header = () => {
     const [activeLink, setActiveLink] = useState('home');
     const [scrolled, setScrolled] = useState(false);
     const [isMenuOpen, setIsMenuOpen] = useState(false);
-    // const [isUserAuthenticated, setIsUserAuthenticated] = useState(false);
     const { theme, setTheme } = useTheme();
-    // const auth = getAuth(app);
+    const [user, setUser] = useState(null);
+
+    useEffect(() => {
+      const unsubscribe = firebase.auth().onAuthStateChanged((user) => {
+        if (user) {
+          // Пользователь вошел в систему
+          setUser(user);
+        } else {
+          // Пользователь вышел из системы
+          setUser(null);
+        }
+      });
+  
+      // Отписка от прослушивания изменений состояния авторизации
+      return () => unsubscribe();
+    }, []);
+  
+    const handleSignOut = async () => {
+      try {
+        await firebase.auth().signOut();
+        // Успешный выход из системы
+      } catch (error) {
+        console.log(error);
+      }
+    };
 
     const handleThemeToggle = () => {
         const newTheme = theme === 'light' ? 'dark' : 'light';
         setTheme(newTheme);
     };
-
-    // const handleLogout = () => {
-    //     signOut(auth)
-    //         .then(() => {
-    //             setIsUserAuthenticated(false);
-    //             console.log("User signed out successfully.");
-    //         })
-    //         .catch((error) => {
-    //             console.error("Error signing out:", error);
-    //         });
-    // };
-
-    // useEffect(() => {
-    //     const unsubscribe = auth.onAuthStateChanged((user) => {
-    //         setIsUserAuthenticated(!!user);
-    //     });
-
-    //     return () => {
-    //         unsubscribe();
-    //     };
-    // }, [auth]);
 
     useEffect(() => {
         const onScroll = () => {
@@ -119,6 +118,27 @@ const Header = () => {
                             >
                                 Калькулятор
                             </NavLink>
+                            <AddProjectButton />
+                            {user ? (
+                                <>
+                                <NavLink
+                                    className={activeLink === 'calculator' ? 'active navbar-link' : 'navbar-link'}
+                                    onClick={() => onUpdateActiveLink('calculator')}
+                                >
+                                    <button className='button_exit' onClick={handleSignOut}>Выйти</button>
+                                </NavLink>
+                                </>
+                            ) : (
+                                <>
+                                <NavLink
+                                    to={"/SignUp"}
+                                    className={activeLink === 'SignUp' ? 'active navbar-link' : 'navbar-link'}
+                                    onClick={() => onUpdateActiveLink('SignUp')}
+                                >
+                                    Регистрация
+                                </NavLink>
+                                </>
+                            )}
                         </Nav>
                         <span className="navbar-text">
                             <div className="social-icon">
@@ -132,14 +152,6 @@ const Header = () => {
                                 <label htmlFor="theme-toggle"></label>
                             </div>
                             <FontAwesomeIcon className="iconMonn" icon={faMoon} size='xl'></FontAwesomeIcon>
-                            {/* {isUserAuthenticated ? (
-                                <button className="btn btn-danger" onClick={handleLogout}>
-                                    <FontAwesomeIcon icon={faSignOutAlt} />
-                                </button>
-                            ) : (
-                                <Auth />
-                            )} */}
-                            <Auth />
                         </span>
                     </Navbar.Collapse>
                 </Container>

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Col, Row, Alert, Modal, Button } from "react-bootstrap";
 
 export const NewsletterForm = ({ status, message, onValidated }) => {
+
   const [email, setEmail] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
   const [showModal, setShowModal] = useState(false);
@@ -59,7 +60,7 @@ export const NewsletterForm = ({ status, message, onValidated }) => {
           <Col md={6} xl={7}>
             <form onSubmit={handleSubmit}>
               <div className="new-email-bx">
-                <input value={email} type="text" onChange={(e) => setEmail(e.target.value)} placeholder="Почта" />
+                <input value={email} type="email" onChange={(e) => setEmail(e.target.value)} placeholder="Почта" />
                 <button type="submit">Отправить</button>
               </div>
             </form>

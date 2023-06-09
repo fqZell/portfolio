@@ -2,8 +2,18 @@ import React, { useRef, useState, useEffect } from "react";
 import { Container, Row, Col, Modal, Button } from "react-bootstrap";
 import contactImg from "../../assets/img/contact/contact-img.svg";
 import emailjs from '@emailjs/browser';
+import firebase from 'firebase/compat/app';
 
 const ContactForm = () => {
+  firebase.initializeApp({
+    apiKey: "AIzaSyC1DULNiRTBQESpdnOKvcKezAHIH7hp96I",
+    authDomain: "portfolioauth-804d3.firebaseapp.com",
+    projectId: "portfolioauth-804d3",
+    storageBucket: "portfolioauth-804d3.appspot.com",
+    messagingSenderId: "579864354440",
+    appId: "1:579864354440:web:5eca0aaba59ec4b89e893d"
+  });
+
   const form = useRef();
 
   const formInitialDetails = {
@@ -19,6 +29,31 @@ const ContactForm = () => {
   const [formErrors, setFormErrors] = useState([]);
   const [message, setMessage] = useState("");
   const [showModal, setShowModal] = useState(false);
+  const [user, setUser] = useState(null);
+
+  useEffect(() => {
+    const unsubscribe = firebase.auth().onAuthStateChanged((user) => {
+      if (user) {
+        // Пользователь вошел в систему
+        setUser(user);
+      } else {
+        // Пользователь вышел из системы
+        setUser(null);
+      }
+    });
+
+    // Отписка от прослушивания изменений состояния авторизации
+    return () => unsubscribe();
+  }, []);
+
+  const handleSignOut = async () => {
+    try {
+      await firebase.auth().signOut();
+      // Успешный выход из системы
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -46,9 +81,9 @@ const ContactForm = () => {
       errors.push("Фамилия должна содержать только символы на кириллице без использования цифр");
     }
 
-    if (!formDetails.email.match(/^[\w-.]+@([\w-]+\.)+[\w-]{2,4}$/)) {
-      errors.push("Введите действительный адрес электронной почты.");
-    }
+    // if (!formDetails.email.match(/^[\w-.]+@([\w-]+\.)+[\w-]{2,4}$/)) {
+    //   errors.push("Введите действительный адрес электронной почты.");
+    // }
 
     if (!formDetails.phone.match(/^[+0-9]+$/) || formDetails.phone.length < 11 || formDetails.phone.length > 13) {
       errors.push("Поле с телефоном должно содержать только цифры и знак '+', так же, должно содержать 11 символов");
@@ -125,9 +160,9 @@ const ContactForm = () => {
                   </Col>
                   <Col size={12} sm={6} className="px-1">
                     <input
-                      type="text"
+                      type="email"
                       name="email"
-                      value={formDetails.email}
+                      value={user ? user.email : formDetails.email}
                       placeholder="Почта"
                       onChange={(e) => onFormUpdate("email", e.target.value)}
                     />
