@@ -79,9 +79,6 @@ const ProjectsPage = () => {
                 <Tab.Content id="slideInUp" className="project-card">
                   <Tab.Pane eventKey="first">
                     <Row>
-                      {/* {projects
-                        .filter((project) => project.id >= 4 && project.id <= 7)
-                        .map((project) => ( */}
                         {isLoading ? (<h2>Идет загрузка...</h2>) 
                         : 
                         (projects.map(project => (
@@ -96,7 +93,6 @@ const ProjectsPage = () => {
                           </div>
                         </Col>
                         )))}
-                        {/* // ))} */}
                     </Row>
                   </Tab.Pane>
                   {/* <Tab.Pane eventKey="second">

@@ -63,8 +63,6 @@ const HomePage = () => {
                 </Container>
             </section>
 
-            {/* <ContactForm /> */}
-
           </div>}
           </TrackVisibility>
 
