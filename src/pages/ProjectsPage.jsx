@@ -6,6 +6,7 @@ import { useState } from "react";
 import axios from "axios";
 import { useEffect } from "react";
 import { NavLink } from "react-router-dom";
+import AddProjectButton from "../components/addProject/AddProjectButton";
 
 const cats = [
   { name: 'Все' },
@@ -52,6 +53,7 @@ const ProjectsPage = () => {
                       {obj.name}
                     </li>
                 ))}
+                <AddProjectButton />
               </div>
               <Tab.Container id="projects-tabs" defaultActiveKey="first">
 

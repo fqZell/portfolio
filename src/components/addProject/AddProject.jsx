@@ -68,6 +68,7 @@ const AddProject = () => {
     <>
       <Container>
         <div className="add">
+        <h2>Добавление проекта</h2>
           <Form onSubmit={handleSubmit}>
             <Form.Group controlId="projectName">
               <Form.Control

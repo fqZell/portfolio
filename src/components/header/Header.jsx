@@ -8,7 +8,6 @@ import logo from "../../assets/img/logo/logo.svg";
 import { useTheme } from "../../hooks/use-theme";
 import { faMoon, faSun } from "@fortawesome/free-solid-svg-icons";
 import firebase from 'firebase/compat/app';
-import AddProjectButton from '../addProject/AddProjectButton';
 
 const Header = () => {
     firebase.initializeApp({
@@ -118,7 +117,6 @@ const Header = () => {
                             >
                                 Калькулятор
                             </NavLink>
-                            <AddProjectButton />
                             {user ? (
                                 <>
                                 <NavLink
