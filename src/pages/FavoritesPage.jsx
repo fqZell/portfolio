@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import { NavLink } from 'react-router-dom';
 
 const FavoritesPage = () => {
   const [favoriteProjects, setFavoriteProjects] = useState([]);
@@ -38,10 +39,14 @@ const FavoritesPage = () => {
       <div className='singleProject'>
         <h2>Избранные проекты</h2>
         {favoriteProjects.map((project) => (
-          <div key={project.id}>
-            <h3>{project.title}</h3>
-            <p>{project.description}</p>
-          </div>
+            <div className="proj-imgbx">
+                <img src={project.preview} alt={project.title} />
+                <div className="proj-txtx">
+                    <NavLink to={`/project/${project.id}`}>
+                    <h4>{project.title}</h4>
+                    </NavLink>
+                </div>
+            </div>
         ))}
       </div>
     </>

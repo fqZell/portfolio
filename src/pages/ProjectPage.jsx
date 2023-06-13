@@ -14,6 +14,7 @@ const ProjectPage = () => {
   const [project, setProject] = useState(null);
   const [showModal, setShowModal] = useState(false);
   const [liked, setLiked] = useLocalStorage('liked', false); // Используем хук useLocalStorage
+  const [favoriteProjects, setFavoriteProjects] = useLocalStorage('favoriteProjects', []); // Используем хук useLocalStorage
   const currentUser = firebase.auth().currentUser;
   const allowedUserId = 'P5pckmI1iDh7VIfIFywUrKRzsvU2'; // Идентификатор разрешенного пользователя
   const navigate = useNavigate();
@@ -56,6 +57,13 @@ const ProjectPage = () => {
 
   const handleLike = () => {
     setLiked(!liked);
+
+    // Добавляем или удаляем проект из избранного
+    if (!liked) {
+      setFavoriteProjects((prevProjects) => [...prevProjects, id]);
+    } else {
+      setFavoriteProjects((prevProjects) => prevProjects.filter((projectId) => projectId !== id));
+    }
   };
 
   if (!project) {
