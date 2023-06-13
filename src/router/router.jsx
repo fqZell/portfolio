@@ -8,6 +8,7 @@ import CalculatorPage from "../pages/CalculatorPage";
 import AddProject from "../components/addProject/AddProject";
 import SignUp from "../components/auth/SignUp";
 import SignIn from "../components/auth/SignIn";
+import FavoritesPage from "../pages/FavoritesPage";
 
 const ScrollToTop = () => {
   const { pathname } = useLocation();
@@ -56,6 +57,10 @@ const router = createBrowserRouter([
       {
         path: "/SignIn",
         element: <SignIn />,
+      },
+      {
+        path: "/Favorites",
+        element: <FavoritesPage />,
       },
     ],
   },

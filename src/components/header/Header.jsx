@@ -120,6 +120,13 @@ const Header = () => {
                             {user ? (
                                 <>
                                 <NavLink
+                                    to={"/Favorites"}
+                                    className={activeLink === 'favorites' ? 'active navbar-link' : 'navbar-link'}
+                                    onClick={() => onUpdateActiveLink('favorites')}
+                                >
+                                    <button className='button_exit'>Избранное</button>
+                                </NavLink>
+                                <NavLink
                                     className={activeLink === 'calculator' ? 'active navbar-link' : 'navbar-link'}
                                     onClick={() => onUpdateActiveLink('calculator')}
                                 >

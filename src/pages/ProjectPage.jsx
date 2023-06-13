@@ -1,17 +1,19 @@
 import React, { useState, useEffect } from 'react';
 import { Container, Row, Modal, Button } from 'react-bootstrap';
 import { NavLink, useNavigate, useParams } from 'react-router-dom';
-import { ArrowRightCircle, Trash } from 'react-bootstrap-icons';
+import { ArrowRightCircle, Trash, HeartFill } from 'react-bootstrap-icons';
 import axios from 'axios';
 import firebase from 'firebase/compat/app';
 import 'firebase/compat/auth';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import { Carousel } from 'react-responsive-carousel';
+import { useLocalStorage } from 'react-use'; // Импортируем хук useLocalStorage
 
 const ProjectPage = () => {
   const { id } = useParams();
   const [project, setProject] = useState(null);
   const [showModal, setShowModal] = useState(false);
+  const [liked, setLiked] = useLocalStorage('liked', false); // Используем хук useLocalStorage
   const currentUser = firebase.auth().currentUser;
   const allowedUserId = 'P5pckmI1iDh7VIfIFywUrKRzsvU2'; // Идентификатор разрешенного пользователя
   const navigate = useNavigate();
@@ -36,7 +38,6 @@ const ProjectPage = () => {
         // Отправляем DELETE-запрос для удаления проекта
         await axios.delete(`https://646bafb47d3c1cae4ce42749.mockapi.io/Projects/${id}`);
         console.log('Проект успешно удален');
-        // Здесь можно добавить дополнительную логику после удаления проекта
         setShowModal(false); // Закрываем модальное окно после удаления
         navigate('/projects'); // Перенаправляем пользователя на главную страницу
       } catch (error) {
@@ -53,6 +54,10 @@ const ProjectPage = () => {
     setShowModal(false);
   };
 
+  const handleLike = () => {
+    setLiked(!liked);
+  };
+
   if (!project) {
     return <p>Загрузка проекта...</p>;
   }
@@ -67,7 +72,16 @@ const ProjectPage = () => {
             </button>
           </NavLink>
           <div className="project-details">
-            <h2>{project.title}</h2>
+          <div className="project-header text-align: center">
+            <h2>
+              {project.title}
+            </h2>
+            {currentUser && currentUser.uid === allowedUserId && (
+                <button className={`button-like ${liked ? 'active' : ''}`} onClick={handleLike}>
+                  <HeartFill size={20} />
+                </button>
+            )}
+          </div>
             <div className="gallery">
               <Carousel infiniteLoop showThumbs={false} autoPlay interval={3000} className="img-slider">
                 <div>

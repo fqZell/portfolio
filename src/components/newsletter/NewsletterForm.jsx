@@ -52,7 +52,7 @@ export const NewsletterForm = ({ status, message, onValidated }) => {
       <div className="newsletter-bx wow slideInUp">
         <Row>
           <Col lg={12} md={6} xl={5}>
-            <h3>Подпишитесь на нашу рассылку<br></br> & Никогда не пропускайте последние обновления</h3>
+            <h3>Подпишитесь на нашу рассылку & Никогда не пропускайте последние обновления</h3>
             {status === 'sending' && <Alert>Отправление...</Alert>}
             {status === 'success' && <Alert variant="success">Вы успешно подписались на рассылку</Alert>}
             {status === 'error' && <Alert variant="danger">Произошла ошибка, повторите ваш запрос позже</Alert>}

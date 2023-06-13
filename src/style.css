@@ -36,6 +36,7 @@ html[data-theme='dark'] {
     --project-card-bcc: #121212;
     --projects--cats-border: #fff;
     --projects--cats-bcc: #121212;
+    --projects-pagination-bcc: #121212;
 
     --project-button-navlink-color: #fff;
     --project-button-gitlink-color: #fff;
@@ -44,6 +45,7 @@ html[data-theme='dark'] {
     --project-gallery-bg-color: #fff;
     --project-gallery-box-shadow-color: rgba(212, 212, 212, 0.2);
     --project-navlink-color: #fff;
+    --project-like-color: #fff;
 
     --contact-gradient-start: #AA367C;
     --contact-gradient-end: #4A2FBD;
@@ -118,6 +120,7 @@ html[data-theme='light'] {
     --project-card-bcc: #fff;
     --projects--cats-border: #121212;
     --projects--cats-bcc: #fff;
+    --projects-pagination-bcc: #fff;
 
     --project-button-navlink-color: #121212;
     --project-button-gitlink-color: #5C62EC;
@@ -126,6 +129,7 @@ html[data-theme='light'] {
     --project-gallery-bg-color: #fff;
     --project-gallery-box-shadow-color: rgba(212, 212, 212, 0.5);
     --project-navlink-color: #121212;
+    --project-like-color: #121212;
 
     --contact-gradient-start: #AA367C;
     --contact-gradient-end: #4A2FBD;
@@ -714,7 +718,7 @@ nav.navbar .navbar-toggler-icon.open span:nth-child(3) {
     align-items: center;
     gap: 16px;
 
-    margin-bottom: 24px;
+    margin: 24px 0;
 }
 
 .project .categories li {
@@ -728,11 +732,11 @@ nav.navbar .navbar-toggler-icon.open span:nth-child(3) {
     transition: ease-in-out 0.2s all;
 }
 
-.project li:hover {
+.project .categories li:hover {
     border: 2px solid var(--projects--cats-border);
 }
 
-.project li.active {
+.project .categories li.active {
     border: 2px solid var(--projects--cats-border);
 }
 
@@ -927,6 +931,12 @@ nav.navbar .navbar-toggler-icon.open span:nth-child(3) {
     border-radius: 0 50px 50px 0; 
 }
 
+.active>.page-link, .page-link.active {
+    background-color: #5C62EC;
+    border-color: #5C62EC;
+    color: #fff;
+}
+
 /************ Single Projects Css ************/
 .singleProject {
     padding: 190px 0 30px 0;
@@ -937,6 +947,31 @@ nav.navbar .navbar-toggler-icon.open span:nth-child(3) {
         padding: 250px 0 0 0;
     }
 }
+
+.project-details {
+    text-align: center;
+    color: var(--project-title-color);
+}
+
+.project-header h2 {
+    margin-bottom: 24px;
+}
+
+.button-like {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    color: var(--project-like-color);
+}
+
+.button-like:hover {
+    color: red;
+}
+
+.button-like.active {
+    color: red;
+}  
 
 .singleProject .button-NavLink {
     color: var(--project-button-navlink-color);
@@ -957,15 +992,6 @@ nav.navbar .navbar-toggler-icon.open span:nth-child(3) {
 
 .singleProject .button-NavLink:hover svg {
     margin-left: 25px;
-}
-
-.project-details {
-    text-align: center;
-}
-
-.project-details h2 {
-    padding-bottom: 24px;
-    color: var(--project-navlink-color);
 }
 
 .gallery {
