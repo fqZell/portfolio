@@ -84,7 +84,7 @@ const ProjectPage = () => {
             <h2>
               {project.title}
             </h2>
-            {currentUser && currentUser.uid === allowedUserId && (
+            {currentUser && (
                 <button className={`button-like ${liked ? 'active' : ''}`} onClick={handleLike}>
                   <HeartFill size={20} />
                 </button>
