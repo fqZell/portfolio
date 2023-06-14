@@ -7,16 +7,15 @@ import firebase from 'firebase/compat/app';
 import 'firebase/compat/auth';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import { Carousel } from 'react-responsive-carousel';
-import { useLocalStorage } from 'react-use'; // Импортируем хук useLocalStorage
+import { useLocalStorage } from 'react-use';
 
 const ProjectPage = () => {
   const { id } = useParams();
   const [project, setProject] = useState(null);
   const [showModal, setShowModal] = useState(false);
-  const [liked, setLiked] = useLocalStorage('liked', false); // Используем хук useLocalStorage
-  const [favoriteProjects, setFavoriteProjects] = useLocalStorage('favoriteProjects', []); // Используем хук useLocalStorage
+  const [favoriteProjects, setFavoriteProjects] = useLocalStorage('favoriteProjects', []);
   const currentUser = firebase.auth().currentUser;
-  const allowedUserId = 'P5pckmI1iDh7VIfIFywUrKRzsvU2'; // Идентификатор разрешенного пользователя
+  const allowedUserId = 'P5pckmI1iDh7VIfIFywUrKRzsvU2';
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -33,14 +32,12 @@ const ProjectPage = () => {
   }, [id]);
 
   const handleDeleteProject = async () => {
-    // Проверяем, что текущий пользователь совпадает с разрешенным пользователем
     if (currentUser && currentUser.uid === allowedUserId) {
       try {
-        // Отправляем DELETE-запрос для удаления проекта
         await axios.delete(`https://646bafb47d3c1cae4ce42749.mockapi.io/Projects/${id}`);
         console.log('Проект успешно удален');
-        setShowModal(false); // Закрываем модальное окно после удаления
-        navigate('/projects'); // Перенаправляем пользователя на главную страницу
+        setShowModal(false);
+        navigate('/projects');
       } catch (error) {
         console.error('Ошибка удаления проекта:', error);
       }
@@ -56,10 +53,11 @@ const ProjectPage = () => {
   };
 
   const handleLike = () => {
-    setLiked(!liked);
+    // Проверяем, содержится ли проект в избранных
+    const isProjectLiked = favoriteProjects.includes(id);
 
     // Добавляем или удаляем проект из избранного
-    if (!liked) {
+    if (!isProjectLiked) {
       setFavoriteProjects((prevProjects) => [...prevProjects, id]);
     } else {
       setFavoriteProjects((prevProjects) => prevProjects.filter((projectId) => projectId !== id));
@@ -69,6 +67,9 @@ const ProjectPage = () => {
   if (!project) {
     return <p>Загрузка проекта...</p>;
   }
+
+  // Проверяем, содержится ли проект в избранных
+  const isProjectLiked = favoriteProjects.includes(id);
 
   return (
     <>
@@ -80,16 +81,11 @@ const ProjectPage = () => {
             </button>
           </NavLink>
           <div className="project-details">
-          <div className="project-header text-align: center">
-            <h2>
-              {project.title}
-            </h2>
-            {currentUser && (
-                <button className={`button-like ${liked ? 'active' : ''}`} onClick={handleLike}>
-                  <HeartFill size={20} />
-                </button>
-            )}
-          </div>
+            <div className="project-header">
+              <div className="project-header-content">
+                <h2>{project.title}</h2>
+              </div>
+            </div>
             <div className="gallery">
               <Carousel infiniteLoop showThumbs={false} autoPlay interval={3000} className="img-slider">
                 <div>
@@ -106,6 +102,11 @@ const ProjectPage = () => {
                 </div>
               </Carousel>
             </div>
+            {currentUser && (
+              <button className={`button-like ${isProjectLiked ? 'active' : ''}`} onClick={handleLike}>
+                <HeartFill size={20} />
+              </button>
+            )}
             <Row>
               <span className="project-skills">Использованные навыки: {project.skills}</span>
               <NavLink to={project.githubLink} target="_blank" rel="noopener noreferrer">
@@ -114,7 +115,6 @@ const ProjectPage = () => {
                 </button>
               </NavLink>
             </Row>
-            {/* Проверяем, что текущий пользователь совпадает с разрешенным пользователем */}
             {currentUser && currentUser.uid === allowedUserId && (
               <button className="button-Delete" onClick={handleShowModal}>
                 <Trash size={20} /> Удалить проект
@@ -124,7 +124,6 @@ const ProjectPage = () => {
         </Container>
       </section>
 
-      {/* Модальное окно для подтверждения удаления проекта */}
       <Modal show={showModal} onHide={handleCloseModal} centered>
         <Modal.Header closeButton>
           <Modal.Title className="modal_title">Удаление проекта</Modal.Title>

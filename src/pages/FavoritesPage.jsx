@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { NavLink } from 'react-router-dom';
+import { Container } from 'react-bootstrap';
 
 const FavoritesPage = () => {
   const [favoriteProjects, setFavoriteProjects] = useState([]);
@@ -36,19 +37,23 @@ const FavoritesPage = () => {
 
   return (
     <>
-      <div className='singleProject'>
-        <h2>Избранные проекты</h2>
-        {favoriteProjects.map((project) => (
-            <div className="proj-imgbx">
+      <section className="projects-favorites">
+        <Container>
+          <h2>Избранные проекты</h2>
+          <div className="projects-favorit d-flex flex-wrap">
+            {favoriteProjects.map((project) => (
+              <div key={project.id} className="proj-imgbx">
                 <img src={project.preview} alt={project.title} />
                 <div className="proj-txtx">
-                    <NavLink to={`/project/${project.id}`}>
+                  <NavLink to={`/project/${project.id}`}>
                     <h4>{project.title}</h4>
-                    </NavLink>
+                  </NavLink>
                 </div>
-            </div>
-        ))}
-      </div>
+              </div>
+            ))}
+          </div>
+        </Container>
+      </section>
     </>
   );
 };

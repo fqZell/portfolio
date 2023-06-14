@@ -55,8 +55,9 @@ const SignUp = () => {
       // Установка дополнительных данных пользователя
       const user = userCredential.user;
       await user.updateProfile({
-        displayName: `${firstName} ${lastName}`,
-        phoneNumber: phone
+        appName: `${firstName}`,
+        displayName: `${lastName}`,
+        phoneNumber: `${phone}`,
       });
 
       navigate('/'); // Перенаправление на главную страницу

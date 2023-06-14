@@ -471,12 +471,19 @@ nav.navbar .navbar-toggler-icon.open span:nth-child(3) {
 
     nav.navbar .navbar-nav .navbar-link {
         padding: 0 15px;
-        font-size: 16px;
+        font-size: 18px;
     }
 
     .navbar-text button {
         padding: 12px 24px;
         font-size: 16px;
+    }
+}
+
+@media (max-width: 1200px) {
+    nav.navbar .navbar-nav .navbar-link {
+        padding: 0 15px;
+        font-size: 18px;
     }
 }
 
@@ -535,6 +542,21 @@ nav.navbar .navbar-toggler-icon.open span:nth-child(3) {
 
 .button_exit {
     color: var(--header-button-color);
+}
+
+@media (max-width: 900px) {
+    .navbar-text {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+    }
+}
+
+@media (max-width: 600px) {
+    .navbar-text {
+        display: flex;
+        flex-direction: row;
+    }
 }
 
 /************ Banner Css ************/
@@ -940,6 +962,9 @@ nav.navbar .navbar-toggler-icon.open span:nth-child(3) {
 /************ Single Projects Css ************/
 .singleProject {
     padding: 190px 0 30px 0;
+    max-width: 1000px;
+    margin: 0 auto;
+    color: var(--project-title-color);
 }
 
 @media (max-width: 768px) {
@@ -949,11 +974,20 @@ nav.navbar .navbar-toggler-icon.open span:nth-child(3) {
 }
 
 .project-details {
-    text-align: center;
     color: var(--project-title-color);
+    text-align: center;
 }
 
 .project-header h2 {
+    margin: 0 auto;
+}
+
+.project-header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    align-content: center;
+    text-align: center;
     margin-bottom: 24px;
 }
 
@@ -963,6 +997,7 @@ nav.navbar .navbar-toggler-icon.open span:nth-child(3) {
     cursor: pointer;
     transition: all 0.3s ease-in-out;
     color: var(--project-like-color);
+    float: right;
 }
 
 .button-like:hover {
@@ -979,8 +1014,7 @@ nav.navbar .navbar-toggler-icon.open span:nth-child(3) {
     font-size: 20px;
     margin-bottom: 24px;
     letter-spacing: 0.8px;
-    display: flex;
-    align-items: center;
+    text-align: center;
 }
 
 .singleProject .button-NavLink svg {
@@ -1008,8 +1042,14 @@ nav.navbar .navbar-toggler-icon.open span:nth-child(3) {
 
 .gallery img {
     max-width: 800px;
-    height: 500px;
+    height: 800px;
     object-fit: contain;
+}
+
+@media (max-width: 700px) {
+    .gallery img {
+        height: 400px;
+    }
 }
 
 .carousel .carousel-status {
@@ -1389,4 +1429,22 @@ nav.navbar .navbar-toggler-icon.open span:nth-child(3) {
 
 .button-Delete {
     color: tomato;
+}
+
+/************ Favorite Css ************/
+.projects-favorites {
+    margin: 170px 0 100px 0;
+}
+
+.projects-favorit {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.projects-favorites h2 {
+    text-align: center;
+    margin-bottom: 24px;
+    color: var(--sign--h2-color);
 }

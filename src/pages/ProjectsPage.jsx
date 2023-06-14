@@ -68,7 +68,10 @@ const ProjectsPage = () => {
               <div className="categories">
                 {cats.map((obj, i) => (
                   <li
-                    onClick={() => setCategoryId(i)}
+                    onClick={() => {
+                      setCategoryId(i);
+                      paginate(1);
+                    }}
                     className={categoryId === i ? "active" : ""}
                     key={obj.name}
                   >
