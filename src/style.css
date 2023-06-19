@@ -1,4 +1,4 @@
-/************ Custom Font ************/
+ /************ Custom Font ************/
 html[data-theme='dark'] {
     --primary-color: #ffffff;
     --secondary-color: #121212;
@@ -969,7 +969,7 @@ nav.navbar .navbar-toggler-icon.open span:nth-child(3) {
 
 @media (max-width: 768px) {
     .singleProject {
-        padding: 250px 0 0 0;
+        padding: 280px 0 0 0;
     }
 }
 
@@ -998,6 +998,7 @@ nav.navbar .navbar-toggler-icon.open span:nth-child(3) {
     transition: all 0.3s ease-in-out;
     color: var(--project-like-color);
     float: right;
+    margin-top: -10px;
 }
 
 .button-like:hover {
@@ -1309,12 +1310,12 @@ nav.navbar .navbar-toggler-icon.open span:nth-child(3) {
 
 /************ Calculator Css ************/
 .calculator {
-    padding: 170px 0 100px 0;
+    margin: 170px 0 100px 0;
 }
 
 @media (max-width: 768px) {
     .calculator {
-        padding: 250px 0 50px 0;
+        margin: 280px 0 50px 0;
     }
 }
 
@@ -1377,6 +1378,12 @@ nav.navbar .navbar-toggler-icon.open span:nth-child(3) {
     border-radius: 16px;
 }
 
+@media (max-width: 500px) {
+    .add {
+        margin-top: 280px;
+    }
+}
+
 .add h2 {
     margin-bottom: 16px;
     color: var(--sign--h2-color);
@@ -1434,6 +1441,12 @@ nav.navbar .navbar-toggler-icon.open span:nth-child(3) {
 /************ Favorite Css ************/
 .projects-favorites {
     margin: 170px 0 100px 0;
+}
+
+@media (max-width: 500px) {
+    .projects-favorites {
+        margin-top: 280px;
+    }
 }
 
 .projects-favorit {
