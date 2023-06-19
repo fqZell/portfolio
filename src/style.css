@@ -569,6 +569,12 @@ nav.navbar .navbar-toggler-icon.open span:nth-child(3) {
     background-repeat: no-repeat;
 }
 
+@media (max-width: 500px) {
+    .project {
+        padding: 280px;
+    }
+}
+
 .banner .tagline {
     font-weight: 700;
     letter-spacing: 0.8px;
@@ -716,6 +722,12 @@ nav.navbar .navbar-toggler-icon.open span:nth-child(3) {
     background-color: var(--project-bg-color);
 }
 
+@media (max-width: 500px) {
+    .project {
+        padding: 280px;
+    }
+}
+
 .project h2 {
     font-size: 45px;
     font-weight: 700;
@@ -851,6 +863,18 @@ nav.navbar .navbar-toggler-icon.open span:nth-child(3) {
     border-radius: 30px;
     overflow: hidden;
     margin-bottom: 24px;
+}
+
+.proj-imgbx img {
+    width: 450px;
+    height: 300px;
+}
+
+@media (max-width: 1024px) {
+    .proj-imgbx img {
+        width: 100%;
+        height: 100%;
+    }
 }
 
 .proj-imgbx::before {
@@ -1007,6 +1031,7 @@ nav.navbar .navbar-toggler-icon.open span:nth-child(3) {
 
 .button-like.active {
     color: red;
+    margin-top: -10px;
 }  
 
 .singleProject .button-NavLink {
