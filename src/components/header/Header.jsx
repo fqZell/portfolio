@@ -147,9 +147,9 @@ const Header = () => {
                         </Nav>
                         <span className="navbar-text">
                             <div className="social-icon">
-                                <a href="#"><FontAwesomeIcon className="icon" icon={faTelegram} size='xl' /></a>
-                                <a href="#"><FontAwesomeIcon className="icon" icon={faVk} size='xl' /></a>
-                                <a href="#"><FontAwesomeIcon className="icon" icon={faGithub} size='xl' /></a>
+                                <a href="https://t.me/giba1000" target='_blank'><FontAwesomeIcon className="icon" icon={faTelegram} size='xl' /></a>
+                                <a href="https://vk.com/mukhametzyan0v" target='_blank'><FontAwesomeIcon className="icon" icon={faVk} size='xl' /></a>
+                                <a href="https://github.com/fqZell" target='_blank'><FontAwesomeIcon className="icon" icon={faGithub} size='xl' /></a>
                             </div>
                             <FontAwesomeIcon className="iconSun" icon={faSun} size='xl'></FontAwesomeIcon>
                             <div className="theme-switcher">
